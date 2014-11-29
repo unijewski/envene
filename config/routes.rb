@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, class_name: "Admin::User"
+
+  namespace :admin do
+    root 'static_pages#index', as: :dashboard
+  end
+
+  root 'admin/static_pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
