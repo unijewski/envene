@@ -1,5 +1,9 @@
 class Admin::StaticPagesController < ApplicationController
-  def index
+  before_action :check_admin, except: [:error]
 
+  def index
+  end
+
+  def error
   end
 end

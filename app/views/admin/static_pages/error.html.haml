@@ -1,0 +1,5 @@
+%h1 Permission denied
+%p Sorry, but it looks that you do not have permissions to see this site.
+= link_to "Admin", admin_dashboard_path
+= link_to "Sign out", destroy_user_session_path, :method => 'delete'
+
