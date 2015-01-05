@@ -30,6 +30,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'holder_rails'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
