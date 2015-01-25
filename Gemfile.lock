@@ -48,6 +48,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -138,6 +140,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.1)
   coffee-rails (~> 4.0.0)
   devise
+  font-awesome-rails
   haml-rails
   holder_rails
   jbuilder (~> 2.0)
