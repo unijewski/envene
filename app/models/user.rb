@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   USERNAME_REGEX = /\A\w{3,}\z/
 
   validates :username, presence: true,
-                    format: { with: USERNAME_REGEX },
-                    uniqueness: { case_sensitive: false }
+                       format: { with: USERNAME_REGEX },
+                       uniqueness: { case_sensitive: false }
 end
