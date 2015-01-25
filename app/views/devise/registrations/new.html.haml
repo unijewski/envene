@@ -14,22 +14,22 @@
         .panel-body
           = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
             %br
-            .form-group.input-group
-              %span.input-group-addon
-                %i.fa.fa-circle-o-notch
+            .form-group
+              .icon-addon
+                %i.fa.fa-user
               = f.input :username, label: false, placeholder: 'Your nickname'
-            .form-group.input-group
-              %span.input-group-addon
+            .form-group
+              .icon-addon
                 %i.fa.fa-at
-              = f.input :email, label: false, placeholder: 'Your e-mail'
-            .form-group.input-group
-              %span.input-group-addon
+                = f.input :email, label: false, placeholder: 'Your e-mail'
+            .form-group
+              .icon-addon
                 %i.fa.fa-lock
-              = f.input :password, label: false, autocomplete: 'off', placeholder: 'Type password'
-            .form-group.input-group
-              %span.input-group-addon
+                = f.input :password, label: false, autocomplete: 'off', placeholder: 'Type password'
+            .form-group
+              .icon-addon
                 %i.fa.fa-lock
-              = f.input :password_confirmation, label: false, autocomplete: 'off', placeholder: 'Retype password'
+                = f.input :password_confirmation, label: false, autocomplete: 'off', placeholder: 'Retype password'
             = f.button :submit, 'Register me', class: 'btn btn-success'
             %hr
             Already registered?

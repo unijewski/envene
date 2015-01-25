@@ -14,12 +14,12 @@
         .panel-body
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             %br
-            .form-group.input-group
-              %span.input-group-addon
+            .form-group
+              .icon-addon
                 %i.fa.fa-tag
               = f.input :email, label: false, autofocus: true, placeholder: 'Your e-mail'
-            .form-group.input-group
-              %span.input-group-addon
+            .form-group
+              .icon-addon
                 %i.fa.fa-lock
               = f.input :password, label: false, autocomplete: 'off', placeholder: 'Your password'
             .form-group
