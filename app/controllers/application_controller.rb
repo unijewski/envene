@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  helper_method :user_admin?
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -15,5 +17,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
     admin_dashboard_path
+  end
+
+  def user_admin?
+    current_user.try(:admin?)
   end
 end

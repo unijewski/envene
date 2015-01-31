@@ -10,10 +10,10 @@
   %body
     =render 'layouts/flash_messages'
 
-    - if user_signed_in? && current_user.admin?
+    - if user_signed_in? && user_admin?
       = yield
-    - if user_signed_in? && !current_user.admin?
-      =render 'layouts/header_no_admin'
+    - elsif user_signed_in? && !user_admin?
+      = render 'layouts/header_no_admin'
       = yield
     - else
       .container-fluid
