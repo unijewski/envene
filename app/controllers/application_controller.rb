@@ -13,12 +13,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def check_admin
-    unless current_user.admin?
-      redirect_to admin_error_path, alert: 'You are not an admin!'
-    end
-  end
-
   def after_sign_in_path_for(user)
     admin_dashboard_path
   end

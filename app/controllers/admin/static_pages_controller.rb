@@ -1,5 +1,5 @@
-class Admin::StaticPagesController < ApplicationController
-  before_action :check_admin, except: [:error]
+class Admin::StaticPagesController < Admin::AdminController
+  before_action :authenticate_admin, except: [:error]
 
   def index
   end
