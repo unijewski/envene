@@ -6,14 +6,15 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans", :rel => "stylesheet", :type => "text/css"}
     = csrf_meta_tags
-    =render 'layouts/shim'
+    = render 'layouts/shim'
   %body
-    =render 'layouts/flash_messages'
+    = render 'layouts/flash_messages'
 
     - if user_signed_in? && user_admin?
+      = render 'admin/layouts/header'
       = yield
     - elsif user_signed_in? && !user_admin?
-      = render 'layouts/header_no_admin'
+      = render 'layouts/header'
       = yield
     - else
       .container-fluid
