@@ -11,8 +11,10 @@
     = render 'layouts/flash_messages'
 
     - if user_signed_in? && user_admin?
-      = render 'admin/layouts/header'
-      = yield
+      #wrapper
+        = render 'admin/layouts/header'
+        = render 'admin/layouts/navigation'
+        = yield
     - elsif user_signed_in? && !user_admin?
       = render 'layouts/header'
       = yield
