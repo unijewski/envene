@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'static_pages#index', as: :dashboard
     get '/error', to: 'static_pages#error', as: :error
+    resources :users
   end
 
   devise_scope :user do
