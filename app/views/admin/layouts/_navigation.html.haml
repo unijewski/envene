@@ -2,7 +2,7 @@
   .sidebar-collapse
     %ul#main-menu.nav
       %li.text-center
-        %img.user-image.img-responsive{:src => 'assets/default_user.png'}/
+        #{gravatar_for(current_user)}
       %li
         %a.active-menu{href: admin_dashboard_path}
           %i.fa.fa-dashboard.fa-3x
