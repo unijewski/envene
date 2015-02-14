@@ -12,7 +12,7 @@
         .panel-heading
           %strong Enter your e-mail address
         .panel-body
-          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'icon-in-input' }) do |f|
             .form-group
               .icon-addon
                 %i.fa.fa-at

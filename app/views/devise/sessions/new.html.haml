@@ -12,7 +12,7 @@
         .panel-heading
           %strong Enter details to login
         .panel-body
-          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'icon-in-input' }) do |f|
             %br
             .form-group
               .icon-addon
