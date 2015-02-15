@@ -1,0 +1,22 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2 Users
+        %h5 To create an user fill in all fields
+    %hr/
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Create a new user
+          .panel-body
+            .row
+              .col-md-6
+                = simple_form_for [:admin, @user] do |f|
+                  = f.input :username
+                  = f.input :email
+                  = f.input :password
+                  = f.input :password_confirmation
+                  = f.input :admin, as: :boolean
+                  = f.button :submit, 'Create', class: 'btn btn-success'

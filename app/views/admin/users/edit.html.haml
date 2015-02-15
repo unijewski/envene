@@ -1,0 +1,19 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2 Users
+    %hr/
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Edit the user
+          .panel-body
+            .row
+              .col-md-6
+                = simple_form_for [:admin, @user] do |f|
+                  = f.input :username
+                  = f.input :email
+                  = f.input :admin, as: :boolean
+                  = f.button :submit, 'Edit', class: 'btn btn-success'
