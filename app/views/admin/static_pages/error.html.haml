@@ -8,3 +8,8 @@
       %br
 
   %p Sorry, but it looks that you do not have permissions to see this site.
+
+  - if !user_signed_in?
+    %p
+      Please,
+      = link_to 'sign in', new_user_session_path
