@@ -8,5 +8,5 @@
     = link_to 'Envene', admin_dashboard_path, class: 'navbar-brand'
   %div{style: 'color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;'}
     Last access:
-    #{current_user.last_sign_in_at.strftime('%Y/%m/%d %H:%M')}
-    = link_to 'Sign out', destroy_user_session_path, method: 'delete', style: 'margin-left: 10px', class: 'btn btn-danger square-btn-adjust'
+    = current_user.last_sign_in_at.strftime('%Y/%m/%d %H:%M')
+    = link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'btn btn-danger square-btn-adjust'
