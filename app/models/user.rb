@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   validates :username, presence: true,
                        format: { with: USERNAME_REGEX },
                        uniqueness: { case_sensitive: false }
+
+  belongs_to :user_group
 end

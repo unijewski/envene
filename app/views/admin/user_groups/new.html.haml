@@ -1,0 +1,18 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2 User groups
+        %h5 To create an user group fill in the field
+    %hr
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Create a new user group
+          .panel-body
+            .row
+              .col-md-6
+                = simple_form_for [:admin, @user_group] do |f|
+                  = f.input :name
+                  = f.button :submit, 'Create', class: 'btn btn-success'

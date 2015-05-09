@@ -21,6 +21,9 @@
                           %td E-mail:
                           %td= @user.email
                         %tr
+                          %td Group:
+                          %td= @user.user_group.name
+                        %tr
                           %td Sign in count:
                           %td= @user.sign_in_count
                         %tr

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'static_pages#index', as: :dashboard
     get '/error', to: 'static_pages#error'
+
     resources :users
+    resources :user_groups
 
     get '/change-password', to: 'users#change_password'
     resource :user, only: [:change_password] do

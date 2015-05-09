@@ -9,7 +9,7 @@
           Dashboard
       %li
         %a{href: '#', class: current_path(admin_users_path)}
-          %i.fa.fa-users.fa-3x
+          %i.fa.fa-user.fa-3x
           Users
           %span.fa.arrow
         %ul.nav
@@ -25,3 +25,17 @@
             %a{href: admin_change_password_path}
               %i.fa.fa-lock
               Change password
+      %li
+        %a{href: '#', class: current_path(admin_user_groups_path)}
+          %i.fa.fa-users.fa-3x
+          User groups
+          %span.fa.arrow
+        %ul.nav
+          %li
+            %a{href: admin_user_groups_path}
+              %i.fa.fa-list
+              List
+          %li
+            %a{href: new_admin_user_group_path}
+              %i.fa.fa-plus-square
+              Add new

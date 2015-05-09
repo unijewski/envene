@@ -5,7 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create(username: 'Admin', email: 'admin@admin.com', password: 'admin123', admin: true)
+UserGroup.create(
+  [{ name: 'User' }, { name: 'Administrator' }, { name: 'Moderator' }, { name: 'Bloger' }]
+)
+
+User.create(
+  username: 'Admin',
+  email: 'admin@admin.com',
+  password: 'admin123',
+  admin: true,
+  user_group_id: 2
+)
 99.times do
   username  = Faker::Internet.user_name
   email = Faker::Internet.free_email
