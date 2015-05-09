@@ -3,8 +3,15 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'static_pages#index', as: :dashboard
-    get '/error', to: 'static_pages#error', as: :error
+    get '/error', to: 'static_pages#error'
     resources :users
+
+    get '/change-password', to: 'users#change_password'
+    resource :user, only: [:change_password] do
+      collection do
+        patch 'update_password'
+      end
+    end
   end
 
   devise_scope :user do

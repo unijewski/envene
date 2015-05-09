@@ -29,6 +29,20 @@ class Admin::UsersController < Admin::AdminController
   def edit
   end
 
+  def change_password
+    @user = current_user
+  end
+
+  def update_password
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      sign_in @user, bypass: true
+      redirect_to admin_dashboard_path, notice: 'The password has been updated!'
+    else
+      render 'edit'
+    end
+  end
+
   def update
     if @user.update(user_params)
       redirect_to admin_users_path, notice: 'The user has been updated!'
