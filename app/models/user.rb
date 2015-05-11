@@ -4,11 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :group, class_name: 'UserGroup'
+
   USERNAME_REGEX = /\A[A-Za-z0-9][[_|\.]?[A-Za-z0-9]+]{2,19}\z/
 
   validates :username, presence: true,
                        format: { with: USERNAME_REGEX },
                        uniqueness: { case_sensitive: false }
-
-  belongs_to :user_group
+  validates :group, presence: true
 end

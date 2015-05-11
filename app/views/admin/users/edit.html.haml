@@ -15,5 +15,6 @@
                 = simple_form_for [:admin, @user] do |f|
                   = f.input :username
                   = f.input :email
+                  = f.input :group_id, collection: UserGroup.all.pluck(:name, :id), include_blank: false
                   = f.input :admin, as: :boolean
                   = f.button :submit, 'Edit', class: 'btn btn-success'

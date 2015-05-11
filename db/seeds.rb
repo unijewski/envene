@@ -14,7 +14,7 @@ User.create(
   email: 'admin@admin.com',
   password: 'admin123',
   admin: true,
-  user_group_id: 2
+  group_id: 2
 )
 99.times do
   username  = Faker::Internet.user_name

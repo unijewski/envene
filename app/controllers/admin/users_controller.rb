@@ -61,7 +61,7 @@ class Admin::UsersController < Admin::AdminController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :username, :admin)
+    params.require(:user).permit(:email, :password, :password_confirmation, :username, :admin, :group_id)
   end
 
   def find_user
