@@ -1,5 +1,5 @@
 class UserGroup < ActiveRecord::Base
-  has_many :users, foreign_key: 'group_id'
+  has_many :users, foreign_key: 'group_id', dependent: :destroy
 
   NAME_REGEX = /\A[A-Z]\w+\z/
 
