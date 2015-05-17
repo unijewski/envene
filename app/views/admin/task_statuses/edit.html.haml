@@ -1,0 +1,17 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2 Task statuses
+    %hr
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Edit the task status
+          .panel-body
+            .row
+              .col-md-6
+                = simple_form_for [:admin, @task_status] do |f|
+                  = f.input :name
+                  = f.button :submit, 'Edit', class: 'btn btn-success'

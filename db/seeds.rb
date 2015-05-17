@@ -22,3 +22,7 @@ User.create(
   password  = 'password'
   User.create(username: username, email: email, password: password)
 end
+
+TaskStatus.create(
+  [{ name: 'New' }, { name: 'In progress' }, { name: 'Done' }, { name: 'Closed' }, { name: 'Rejected' }]
+)

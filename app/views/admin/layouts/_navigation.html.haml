@@ -39,3 +39,17 @@
             %a{href: new_admin_user_group_path}
               %i.fa.fa-plus-square
               Add new
+      %li
+        %a{href: '#', class: current_path(admin_task_statuses_path)}
+          %i.fa.fa-check-square-o.fa-3x
+          Task statuses
+          %span.fa.arrow
+        %ul.nav
+          %li
+            %a{href: admin_task_statuses_path}
+              %i.fa.fa-list
+              List
+          %li
+            %a{href: new_admin_task_status_path}
+              %i.fa.fa-plus-square
+              Add new
