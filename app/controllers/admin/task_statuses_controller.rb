@@ -6,7 +6,7 @@ class Admin::TaskStatusesController < ApplicationController
   end
 
   def show
-    @task_status = TaskStatus.find(params[:id])
+    @task_status = TaskStatus.find(params[:id]).tasks.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
     redirect_to admin_task_statuses_path, alert: 'The task status does not exist!'
   end

@@ -6,7 +6,7 @@ class Admin::TaskPriorityTypesController < ApplicationController
   end
 
   def show
-    @task_priority_type = TaskPriorityType.find(params[:id])
+    @task_priority_type = TaskPriorityType.find(params[:id]).tasks.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
     redirect_to admin_task_priority_types_path, alert: 'The task priority type does not exist!'
   end
