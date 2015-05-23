@@ -1,0 +1,29 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2 Task priority types
+    %hr
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Task priority types list
+          .panel-body
+            .table-responsive
+              %table.table.table-striped
+                %thead
+                  %tr
+                    %th #
+                    %th Name
+                %tbody
+                - @task_priority_types.each do |task_priority_type|
+                  %tr
+                    %td= task_priority_type.id
+                    %td= task_priority_type.name
+                    %td= link_to 'Show', admin_task_priority_type_path(task_priority_type), class: 'btn btn-primary btn-xs'
+                    %td= link_to 'Edit', edit_admin_task_priority_type_path(task_priority_type), class: 'btn btn-warning btn-xs'
+                    %td= link_to 'Destroy', admin_task_priority_type_path(task_priority_type), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+            .row
+              .col-sm-6
+                = will_paginate @task_priority_types, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2

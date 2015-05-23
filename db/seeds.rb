@@ -26,3 +26,7 @@ end
 TaskStatus.create(
   [{ name: 'New' }, { name: 'In progress' }, { name: 'Done' }, { name: 'Closed' }, { name: 'Rejected' }]
 )
+
+TaskPriorityType.create(
+  [{ name: 'Low' }, { name: 'Normal' }, { name: 'High' }, { name: 'Urgent' }, { name: 'Immediate' }]
+)

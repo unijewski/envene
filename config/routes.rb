@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get '/error', to: 'static_pages#error'
 
     resources :task_statuses
+    resources :task_priority_types
     resources :users
     resources :user_groups
 

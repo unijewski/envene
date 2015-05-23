@@ -1,0 +1,18 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2 Task priority types
+        %h5 To create a task priority type fill in the field
+    %hr
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Create a new task priority type
+          .panel-body
+            .row
+              .col-md-6
+                = simple_form_for [:admin, @task_priority_type] do |f|
+                  = f.input :name
+                  = f.button :submit, 'Create', class: 'btn btn-success'
