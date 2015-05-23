@@ -1,0 +1,3 @@
+= simple_form_for [:admin, @task_priority_type] do |f|
+  = f.input :name
+  = f.button :submit, @task_priority_type.new_record? ? 'Create' : 'Edit', class: 'btn btn-success'

@@ -1,0 +1,3 @@
+= simple_form_for [:admin, @user_group] do |f|
+  = f.input :name
+  = f.button :submit, @user_group.new_record? ? 'Create' : 'Edit', class: 'btn btn-success'
