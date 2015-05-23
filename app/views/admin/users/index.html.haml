@@ -31,7 +31,7 @@
                     %td= user.admin? ? 'Yes' : 'No'
                     %td= link_to 'Show', admin_user_path(user), class: 'btn btn-primary btn-xs'
                     %td= link_to 'Edit', edit_admin_user_path(user), class: 'btn btn-warning btn-xs'
-                    %td= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+                    %td= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure? This action will delete all tasks assigned to this user!' }, class: 'btn btn-danger btn-xs'
             .row
               .col-sm-6
                 = will_paginate @users, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
