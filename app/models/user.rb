@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :group, class_name: 'UserGroup'
-  has_many :tasks, dependent: :destroy
+  has_many :tasks, foreign_key: 'author_id', dependent: :destroy
 
   USERNAME_REGEX = /\A[A-Za-z0-9][[_|\.]?[A-Za-z0-9]+]{2,19}\z/
 
