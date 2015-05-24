@@ -6,10 +6,24 @@
         %h5 Welcome #{current_user.username}, love to see you back.
     %hr
     .row
-      .col-md-3
-        .panel.panel-primary.text-center.no-boder.bg-color-green
-          .panel-body
-            %i.fa.fa-users.fa-5x
-            %h3= User.count
-          .panel-footer.back-footer-green
-            Registered users
+      .col-md-4.col-sm-4.col-xs-4
+        .panel.panel-back.noti-box
+          %span.icon-box.bg-color-green.set-icon
+            %i.fa.fa-users
+          .text-box
+            %p.main-text= User.count
+            %p.text-muted Users
+      .col-md-4.col-sm-4.col-xs-4
+        .panel.panel-back.noti-box
+          %span.icon-box.bg-color-blue.set-icon
+            %i.fa.fa-check-square-o
+          .text-box
+            %p.main-text= Task.count
+            %p.text-muted Tasks
+      .col-md-4.col-sm-4.col-xs-4
+        .panel.panel-back.noti-box
+          %span.icon-box.bg-color-brown.set-icon
+            %i.fa.fa-newspaper-o
+          .text-box
+            %p.main-text= Post.count
+            %p.text-muted Posts
