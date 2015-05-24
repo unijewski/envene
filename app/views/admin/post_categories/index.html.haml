@@ -23,7 +23,7 @@
                     %td= post_category.name
                     %td= link_to 'Show', admin_post_category_path(post_category), class: 'btn btn-primary btn-xs'
                     %td= link_to 'Edit', edit_admin_post_category_path(post_category), class: 'btn btn-warning btn-xs'
-                    %td= link_to 'Destroy', admin_post_category_path(post_category), method: :delete, data: { confirm: 'Are you sure? This action will delete all tasks assigned to this status!' }, class: 'btn btn-danger btn-xs'
+                    %td= link_to 'Destroy', admin_post_category_path(post_category), method: :delete, data: { confirm: 'Are you sure? This action will delete all posts assigned to this category!' }, class: 'btn btn-danger btn-xs'
             .row
               .col-sm-6
                 = will_paginate @post_categories, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
