@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     root 'static_pages#index', as: :dashboard
     get '/error', to: 'static_pages#error'
 
+    resources :post_categories
     resources :tasks
     resources :task_statuses
     resources :task_priority_types

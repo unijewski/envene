@@ -81,3 +81,17 @@
             %a{href: new_admin_task_priority_type_path}
               %i.fa.fa-plus-square
               Add new
+      %li
+        %a{href: '#', class: current_path(admin_post_categories_path)}
+          %i.fa.fa-bars.fa-3x
+          Post categories
+          %span.fa.arrow
+        %ul.nav
+          %li
+            %a{href: admin_post_categories_path}
+              %i.fa.fa-list
+              List
+          %li
+            %a{href: new_admin_post_category_path}
+              %i.fa.fa-plus-square
+              Add new

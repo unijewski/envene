@@ -1,0 +1,3 @@
+= simple_form_for [:admin, @post_category] do |f|
+  = f.input :name
+  = f.button :submit, @post_category.new_record? ? 'Create' : 'Edit', class: 'btn btn-success'
