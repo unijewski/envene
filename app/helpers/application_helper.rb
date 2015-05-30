@@ -8,4 +8,12 @@ module ApplicationHelper
       'active-menu'
     end
   end
+
+  def page_header
+    params[:controller].split('/').last.humanize
+  end
+
+  def page_header_singularized
+    page_header.singularize
+  end
 end
