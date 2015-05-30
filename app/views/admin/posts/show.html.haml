@@ -30,3 +30,18 @@
                   %tbody
                     %tr
                       %td= @post.body
+            .row
+              .col-md-12{style: 'margin-top: 15px;'}
+                .btn-group.btn-group-justified{"aria-label" => "...", :role => "group"}
+                  .btn-group{role: 'group'}
+                    = link_to :back, class: 'btn btn-warning' do
+                      %i.fa.fa-arrow-left
+                      Back
+                  .btn-group{role: 'group'}
+                    = link_to edit_admin_post_path(@post), class: 'btn btn-primary' do
+                      %i.fa.fa-edit
+                      Edit
+                  .btn-group{role: 'group'}
+                    = link_to admin_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+                      %i.fa.fa-pencil
+                      Delete
