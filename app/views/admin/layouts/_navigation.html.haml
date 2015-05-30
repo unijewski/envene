@@ -12,7 +12,7 @@
           %i.fa.fa-user.fa-3x
           Users
           %span.fa.arrow
-        %ul.nav
+        %ul.nav.nav-second-level
           %li
             %a{href: admin_users_path}
               %i.fa.fa-list
@@ -25,26 +25,26 @@
             %a{href: admin_change_password_path}
               %i.fa.fa-lock
               Change password
-      %li
-        %a{href: '#', class: current_path(admin_user_groups_path)}
-          %i.fa.fa-users.fa-3x
-          User groups
-          %span.fa.arrow
-        %ul.nav
           %li
-            %a{href: admin_user_groups_path}
-              %i.fa.fa-list
-              List
-          %li
-            %a{href: new_admin_user_group_path}
-              %i.fa.fa-plus-square
-              Add new
+            %a{href: '#'}
+              %i.fa.fa-users
+              Groups
+              %span.fa.arrow
+            %ul.nav.nav-third-level
+              %li
+                %a{href: admin_user_groups_path}
+                  %i.fa.fa-list
+                  List
+              %li
+                %a{href: new_admin_user_group_path}
+                  %i.fa.fa-plus-square
+                  Add new
       %li
         %a{href: '#', class: current_path(admin_tasks_path)}
           %i.fa.fa-check-square-o.fa-3x
           Tasks
           %span.fa.arrow
-        %ul.nav
+        %ul.nav.nav-second-level
           %li
             %a{href: admin_tasks_path}
               %i.fa.fa-list
@@ -53,45 +53,59 @@
             %a{href: new_admin_task_path}
               %i.fa.fa-plus-square
               Add new
-      %li
-        %a{href: '#', class: current_path(admin_task_statuses_path)}
-          %i.fa.fa-toggle-on.fa-3x
-          Task statuses
-          %span.fa.arrow
-        %ul.nav
           %li
-            %a{href: admin_task_statuses_path}
+            %a{href: '#'}
+              %i.fa.fa-toggle-on
+              Statuses
+              %span.fa.arrow
+            %ul.nav.nav-third-level
+              %li
+                %a{href: admin_task_statuses_path}
+                  %i.fa.fa-list
+                  List
+              %li
+                %a{href: new_admin_task_status_path}
+                  %i.fa.fa-plus-square
+                  Add new
+          %li
+            %a{href: '#'}
+              %i.fa.fa-star
+              Priority types
+              %span.fa.arrow
+            %ul.nav.nav-third-level
+              %li
+                %a{href: admin_task_priority_types_path}
+                  %i.fa.fa-list
+                  List
+              %li
+                %a{href: new_admin_task_priority_type_path}
+                  %i.fa.fa-plus-square
+                  Add new
+      %li
+        %a{href: '#', class: current_path(admin_posts_path)}
+          %i.fa.fa-newspaper-o.fa-3x
+          Posts
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            %a{href: admin_posts_path}
               %i.fa.fa-list
               List
           %li
-            %a{href: new_admin_task_status_path}
+            %a{href: new_admin_post_path}
               %i.fa.fa-plus-square
               Add new
-      %li
-        %a{href: '#', class: current_path(admin_task_priority_types_path)}
-          %i.fa.fa-star.fa-3x
-          Task priority types
-          %span.fa.arrow
-        %ul.nav
           %li
-            %a{href: admin_task_priority_types_path}
-              %i.fa.fa-list
-              List
-          %li
-            %a{href: new_admin_task_priority_type_path}
-              %i.fa.fa-plus-square
-              Add new
-      %li
-        %a{href: '#', class: current_path(admin_post_categories_path)}
-          %i.fa.fa-bars.fa-3x
-          Post categories
-          %span.fa.arrow
-        %ul.nav
-          %li
-            %a{href: admin_post_categories_path}
-              %i.fa.fa-list
-              List
-          %li
-            %a{href: new_admin_post_category_path}
-              %i.fa.fa-plus-square
-              Add new
+            %a{href: '#'}
+              %i.fa.fa-bars
+              Categories
+              %span.fa.arrow
+            %ul.nav.nav-third-level
+              %li
+                %a{href: admin_post_categories_path}
+                  %i.fa.fa-list
+                  List
+              %li
+                %a{href: new_admin_post_category_path}
+                  %i.fa.fa-plus-square
+                  Add new
