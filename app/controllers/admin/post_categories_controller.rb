@@ -6,7 +6,7 @@ class Admin::PostCategoriesController < ApplicationController
   end
 
   def show
-    find_post_category
+    @post_category = PostCategory.find(params[:id]).posts.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
     redirect_to admin_post_categories_path, alert: 'The post category does not exist!'
   end

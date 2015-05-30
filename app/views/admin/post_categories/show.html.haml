@@ -1,0 +1,31 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2= page_header
+    %hr
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Posts in #{@post_category.first.category.name} category
+          .panel-body
+            .table-responsive
+              %table.table.table-striped
+                %thead
+                  %tr
+                    %th #
+                    %th Title
+                    %th Published
+                    %th Author
+                %tbody
+                - @post_category.each do |post|
+                  %tr
+                    %td= post.id
+                    %td= truncate(post.title, length: 60)
+                    %td= post.published? ? 'Yes' : 'No'
+                    %td= post.author.username
+                    %td= link_to 'Show', admin_post_path(post), class: 'btn btn-primary btn-xs'
+            .row
+              .col-sm-6
+                = will_paginate @post_category, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
