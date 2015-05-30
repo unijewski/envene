@@ -1,0 +1,32 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2 Posts
+    %hr
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            #{@post.title}
+          .panel-body
+            .row
+              .col-md-12
+                .table-responsive
+                  #dataTables-example_wrapper.dataTables_wrapper.form-inline{:role => 'grid'}
+                    %table#dataTables-example.table.table-striped.table-bordered.table-hover.dataTable.no-footer{'aria-describedby' => 'dataTables-example_info'}
+                      %tbody
+                        %tr
+                          %td Published
+                          %td= @post.published? ? 'Yes' : 'No'
+                          %td Author
+                          %td= link_to @post.author.username, admin_user_path(@post.author)
+                        %tr
+                          %td Category
+                          %td= @post.category.name
+                          %td Created
+                          %td= @post.created_at.strftime('%Y/%m/%d')
+                .table-responsive
+                  %tbody
+                    %tr
+                      %td= @post.body

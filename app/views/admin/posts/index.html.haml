@@ -1,0 +1,35 @@
+#page-wrapper
+  #page-inner
+    .row
+      .col-md-12
+        %h2 Posts
+    %hr
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Posts list
+          .panel-body
+            .table-responsive
+              %table.table.table-striped
+                %thead
+                  %tr
+                    %th #
+                    %th Title
+                    %th Published
+                    %th Author
+                    %th Category
+                %tbody
+                - @posts.each do |post|
+                  %tr
+                    %td= post.id
+                    %td= truncate(post.title, length: 45)
+                    %td= post.published? ? 'Yes' : 'No'
+                    %td= post.author.username
+                    %td= post.category.name
+                    %td= link_to 'Show', admin_post_path(post), class: 'btn btn-primary btn-xs'
+                    %td= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-warning btn-xs'
+                    %td= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+            .row
+              .col-sm-6
+                = will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2

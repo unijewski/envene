@@ -1,0 +1,6 @@
+= simple_form_for [:admin, @post] do |f|
+  = f.input :title
+  = f.input :body, as: :text, input_html: { rows: 10 }
+  = f.input :category_id, collection: PostCategory.all.pluck(:name, :id), include_blank: false
+  = f.input :published, as: :boolean
+  = f.button :submit, @post.new_record? ? 'Create' : 'Edit', class: 'btn btn-success'
