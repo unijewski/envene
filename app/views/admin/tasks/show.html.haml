@@ -10,7 +10,7 @@
           .panel-heading #{truncate(@task.name, length: 2000)}
           .panel-body
             .row
-              .col-md-9
+              .col-md-8
                 %h3 Progress
                 .table-responsive
                   %tbody
@@ -26,7 +26,7 @@
                       %tbody
                         %tr
                           %td= @task.description
-              .col-md-3
+              .col-md-4
                 %h3 Others
                 .table-responsive
                   #dataTables-example_wrapper.dataTables_wrapper.form-inline{:role => 'grid'}
