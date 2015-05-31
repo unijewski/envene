@@ -89,3 +89,28 @@
             .row
               .col-sm-6
                 = will_paginate @user_tasks, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            Posts written by this user
+          .panel-body
+            .table-responsive
+              %table.table.table-striped
+                %thead
+                  %tr
+                    %th #
+                    %th Title
+                    %th Published
+                    %th Category
+                %tbody
+                - @user_posts.each do |post|
+                  %tr
+                    %td= post.id
+                    %td= truncate(post.title, length: 60)
+                    %td= post.published? ? 'Yes' : 'No'
+                    %td= post.category.name
+                    %td= link_to 'Show', admin_post_path(post), class: 'btn btn-primary btn-xs'
+            .row
+              .col-sm-6
+                = will_paginate @user_posts, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2

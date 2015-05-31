@@ -7,7 +7,8 @@ class Admin::UsersController < Admin::AdminController
 
   def show
     find_user
-    @user_tasks = User.find(params[:id]).tasks.order(:id).paginate(page: params[:page])
+    @user_tasks = find_user.tasks.order(:id).paginate(page: params[:page])
+    @user_posts = find_user.posts.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
     redirect_to admin_users_path, alert: 'The user does not exist!'
   end
