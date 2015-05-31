@@ -1,6 +1,6 @@
 = simple_form_for [:admin, @task] do |f|
   = f.input :name
-  = f.input :description, as: :text, input_html: { rows: 10 }
+  = f.input :description, as: :pagedown, input_html: { preview: true, rows: 20 }
   = f.input :progress, collection: 0.step(100, 10), include_blank: false
   = f.input :status_id, collection: TaskStatus.all.pluck(:name, :id), include_blank: false
   = f.input :priority_id, collection: TaskPriorityType.all.pluck(:name, :id), include_blank: false

@@ -26,10 +26,12 @@
                           %td= @post.category.name
                           %td Created
                           %td= @post.created_at.strftime('%Y/%m/%d')
-                .table-responsive
-                  %tbody
-                    %tr
-                      %td= @post.body
+            .row
+              .col-md-12
+                .well
+                  .wmd-output><
+                    :preserve
+                      #{@post.body}
             .row
               .col-md-12{style: 'margin-top: 15px;'}
                 .btn-group.btn-group-justified{"aria-label" => "...", :role => "group"}
