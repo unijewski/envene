@@ -2,7 +2,13 @@ class Admin::UsersController < Admin::AdminController
   before_action :find_user, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.all.order(:id).paginate(page: params[:page])
+    users = User.all.order(:id).paginate(page: params[:page])
+
+    if params[:user]
+      @users = users.search(params[:user][:search]).order(:id).paginate(page: params[:page])
+    else
+      @users = users
+    end
   end
 
   def show

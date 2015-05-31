@@ -2,10 +2,16 @@ class Admin::TasksController < Admin::AdminController
   before_action :find_task, only: [:edit, :update, :destroy]
 
   def index
-    @tasks = Task.all.order(:id).paginate(page: params[:page])
+    tasks = Task.all.order(:id).paginate(page: params[:page])
+
+    if params[:task]
+      @tasks = tasks.search(params[:task][:search]).order(:id).paginate(page: params[:page])
+    else
+      @tasks = tasks
+    end
   end
 
- def show
+  def show
     find_task
   rescue ActiveRecord::RecordNotFound
     redirect_to admin_tasks_path, alert: 'The task does not exist!'

@@ -10,31 +10,39 @@
           .panel-heading
             List
           .panel-body
-            .table-responsive
-              %table.table.table-striped
-                %thead
-                  %tr
-                    %th #
-                    %th Name
-                    %th Progress
-                    %th Status
-                    %th Priority
-                    %th Author
-                %tbody
-                - @tasks.each do |task|
-                  %tr
-                    %td= task.id
-                    %td= truncate(task.name, length: 45)
-                    %td
-                      .progress.progress-striped
-                        .progress-bar.progress-bar-success{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => "#{task.progress}", :role => 'progressbar', :style => "width: #{task.progress}%"}
-                          %span.sr-only #{task.progress}% Complete (success)
-                    %td= task.status.name
-                    %td= task.priority.name
-                    %td= task.author.username
-                    %td= link_to 'Show', admin_task_path(task), class: 'btn btn-primary btn-xs'
-                    %td= link_to 'Edit', edit_admin_task_path(task), class: 'btn btn-warning btn-xs'
-                    %td= link_to 'Destroy', admin_task_path(task), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+            .row
+              .col-md-12
+                #dataTables-example_filter.dataTables_filter
+                  = simple_form_for :task, url: admin_tasks_path, html: { method: :get, class: 'form-inline' } do |f|
+                    = f.input :search, label: false, placeholder: 'Type a task name...', input_html: { size: 40 }
+                    = f.button :submit, 'Search'
+            %br
+            .row
+              .table-responsive
+                %table.table.table-striped
+                  %thead
+                    %tr
+                      %th #
+                      %th Name
+                      %th Progress
+                      %th Status
+                      %th Priority
+                      %th Author
+                  %tbody
+                  - @tasks.each do |task|
+                    %tr
+                      %td= task.id
+                      %td= truncate(task.name, length: 45)
+                      %td
+                        .progress.progress-striped
+                          .progress-bar.progress-bar-success{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => "#{task.progress}", :role => 'progressbar', :style => "width: #{task.progress}%"}
+                            %span.sr-only #{task.progress}% Complete (success)
+                      %td= task.status.name
+                      %td= task.priority.name
+                      %td= task.author.username
+                      %td= link_to 'Show', admin_task_path(task), class: 'btn btn-primary btn-xs'
+                      %td= link_to 'Edit', edit_admin_task_path(task), class: 'btn btn-warning btn-xs'
+                      %td= link_to 'Destroy', admin_task_path(task), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
             .row
               .col-sm-6
                 = will_paginate @tasks, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2

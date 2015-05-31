@@ -9,4 +9,8 @@ class Task < ActiveRecord::Base
                          greater_than_or_equal_to: 0,
                          less_than_or_equal_to: 100
                        }
+
+  def self.search(keyword)
+    where('name ILIKE ?', "%#{keyword}%")
+  end
 end

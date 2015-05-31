@@ -10,26 +10,34 @@
           .panel-heading
             List
           .panel-body
-            .table-responsive
-              %table.table.table-striped
-                %thead
-                  %tr
-                    %th #
-                    %th Title
-                    %th Published
-                    %th Author
-                    %th Category
-                %tbody
-                - @posts.each do |post|
-                  %tr
-                    %td= post.id
-                    %td= truncate(post.title, length: 45)
-                    %td= post.published? ? 'Yes' : 'No'
-                    %td= post.author.username
-                    %td= post.category.name
-                    %td= link_to 'Show', admin_post_path(post), class: 'btn btn-primary btn-xs'
-                    %td= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-warning btn-xs'
-                    %td= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+            .row
+              .col-md-12
+                #dataTables-example_filter.dataTables_filter
+                  = simple_form_for :post, url: admin_posts_path, html: { method: :get, class: 'form-inline' } do |f|
+                    = f.input :search, label: false, placeholder: 'Type a title...', input_html: { size: 40 }
+                    = f.button :submit, 'Search'
+            %br
+            .row
+              .table-responsive
+                %table.table.table-striped
+                  %thead
+                    %tr
+                      %th #
+                      %th Title
+                      %th Published
+                      %th Author
+                      %th Category
+                  %tbody
+                  - @posts.each do |post|
+                    %tr
+                      %td= post.id
+                      %td= truncate(post.title, length: 45)
+                      %td= post.published? ? 'Yes' : 'No'
+                      %td= post.author.username
+                      %td= post.category.name
+                      %td= link_to 'Show', admin_post_path(post), class: 'btn btn-primary btn-xs'
+                      %td= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-warning btn-xs'
+                      %td= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
             .row
               .col-sm-6
                 = will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2

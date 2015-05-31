@@ -2,7 +2,13 @@ class Admin::PostsController < Admin::AdminController
   before_action :find_post, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order(:id).paginate(page: params[:page])
+    posts = Post.all.order(:id).paginate(page: params[:page])
+
+    if params[:post]
+      @posts = posts.search(params[:post][:search]).order(:id).paginate(page: params[:page])
+    else
+      @posts = posts
+    end
   end
 
   def show
