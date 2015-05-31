@@ -78,6 +78,8 @@ GEM
     minitest (5.4.3)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
+    pagedown-bootstrap-rails (2.1.2)
+      railties (> 3.1)
     pg (0.17.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -163,6 +165,7 @@ DEPENDENCIES
   holder_rails
   jbuilder (~> 2.0)
   jquery-rails
+  pagedown-bootstrap-rails
   pg
   pry
   rails (= 4.1.7)
