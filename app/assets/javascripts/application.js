@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require holder
+//= require pagedown_bootstrap
+//= require pagedown_init
 //= require_tree .
