@@ -163,6 +163,7 @@ DEPENDENCIES
   font-awesome-rails
   haml-rails
   holder_rails
+  i18n
   jbuilder (~> 2.0)
   jquery-rails
   pagedown-bootstrap-rails
