@@ -1,22 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  namespace :admin do
-    root 'static_pages#index', as: :dashboard
-    get '/error', to: 'static_pages#error'
+  scope '/:locale', locale: /en|pl/ do
+    namespace :admin do
+      root 'static_pages#index', as: :dashboard
+      get '/error', to: 'static_pages#error'
 
-    resources :posts
-    resources :post_categories
-    resources :tasks
-    resources :task_statuses
-    resources :task_priority_types
-    resources :users
-    resources :user_groups
+      resources :posts
+      resources :post_categories
+      resources :tasks
+      resources :task_statuses
+      resources :task_priority_types
+      resources :users
+      resources :user_groups
 
-    get '/change-password', to: 'users#change_password'
-    resource :user, only: [:change_password] do
-      collection do
-        patch 'update_password'
+      get '/change-password', to: 'users#change_password'
+      resource :user, only: [:change_password] do
+        collection do
+          patch 'update_password'
+        end
       end
     end
   end

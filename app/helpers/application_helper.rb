@@ -16,4 +16,9 @@ module ApplicationHelper
   def page_header_singularized
     page_header.singularize
   end
+
+  def change_locale_path(locale)
+    path = request.env['PATH_INFO'][3..-1]
+    path.prepend('/' + locale)
+  end
 end
