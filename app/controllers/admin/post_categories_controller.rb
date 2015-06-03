@@ -8,7 +8,7 @@ class Admin::PostCategoriesController < ApplicationController
   def show
     @post_category = PostCategory.find(params[:id]).posts.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
-    redirect_to admin_post_categories_path, alert: 'The post category does not exist!'
+    redirect_to admin_post_categories_path, alert: t('not_found')
   end
 
   def new
@@ -19,9 +19,9 @@ class Admin::PostCategoriesController < ApplicationController
     @post_category = PostCategory.new(post_category_params)
 
     if @post_category.save
-      redirect_to admin_post_categories_path, notice: 'The post category has been created!'
+      redirect_to admin_post_categories_path, notice: t('created')
     else
-      flash[:alert] = 'Oooups! Something went wrong'
+      flash[:alert] = t('error')
       render 'new'
     end
   end
@@ -31,9 +31,9 @@ class Admin::PostCategoriesController < ApplicationController
 
   def update
     if @post_category.update(post_category_params)
-      redirect_to admin_post_categories_path, notice: 'The post category has been updated!'
+      redirect_to admin_post_categories_path, notice: t('updated')
     else
-      flash[:alert] = 'Oooups! Something went wrong'
+      flash[:alert] = t('error')
       render 'edit'
     end
   end
@@ -41,7 +41,7 @@ class Admin::PostCategoriesController < ApplicationController
   def destroy
     @post_category.destroy
 
-    redirect_to admin_post_categories_path, notice: 'The post category has been deleted!'
+    redirect_to admin_post_categories_path, notice: t('deleted')
   end
 
   private

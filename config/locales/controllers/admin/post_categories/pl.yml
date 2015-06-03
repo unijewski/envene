@@ -1,0 +1,6 @@
+pl:
+  not_found: Kategoria postu nie istnieje!
+  created: Kategoria postu została utworzona!
+  error: Ups! Coś poszło nie tak
+  updated: Kategoria postu została zaktualizowana!
+  deleted: Kategoria postu została usunięta!

@@ -5,7 +5,7 @@ class Admin::AdminController < ApplicationController
 
   def authenticate_admin
     unless user_admin?
-      redirect_to admin_error_path, alert: 'You are not an admin!'
+      redirect_to admin_error_path, alert: t('not_admin')
     end
   end
 end

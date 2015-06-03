@@ -1,0 +1,7 @@
+pl:
+  not_found: Użytkownik nie istnieje!
+  created: Użytkownik został utworzony!
+  error: Ups! Coś poszło nie tak
+  password: Twoje hasło zostało zaktualizowane!
+  updated: Użytkownik został zaktualizowany!
+  deleted: Użytkownik został usunięty!

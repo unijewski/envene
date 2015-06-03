@@ -14,7 +14,7 @@ class Admin::TasksController < Admin::AdminController
   def show
     find_task
   rescue ActiveRecord::RecordNotFound
-    redirect_to admin_tasks_path, alert: 'The task does not exist!'
+    redirect_to admin_tasks_path, alert: t('not_found')
   end
 
   def new
@@ -26,9 +26,9 @@ class Admin::TasksController < Admin::AdminController
     @task.author = current_user
 
     if @task.save
-      redirect_to admin_task_path(@task), notice: 'The task has been created!'
+      redirect_to admin_task_path(@task), notice: t('created')
     else
-      flash[:alert] = 'Oooups! Something went wrong'
+      flash[:alert] = t('error')
       render 'new'
     end
   end
@@ -38,9 +38,9 @@ class Admin::TasksController < Admin::AdminController
 
   def update
     if @task.update(task_params)
-      redirect_to admin_tasks_path, notice: 'The task has been updated!'
+      redirect_to admin_tasks_path, notice: t('updated')
     else
-      flash[:alert] = 'Oooups! Something went wrong'
+      flash[:alert] = t('error')
       render 'edit'
     end
   end
@@ -48,7 +48,7 @@ class Admin::TasksController < Admin::AdminController
   def destroy
     @task.destroy
 
-    redirect_to admin_tasks_path, notice: 'The task has been deleted!'
+    redirect_to admin_tasks_path, notice: t('deleted')
   end
 
   private

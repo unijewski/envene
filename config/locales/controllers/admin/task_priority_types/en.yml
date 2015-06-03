@@ -1,0 +1,6 @@
+en:
+  not_found: The task priority type does not exist!
+  created: The task priority type has been created!
+  error: Oooups! Something went wrong
+  updated: The task priority type has been updated!
+  deleted: The task priority type has been deleted!

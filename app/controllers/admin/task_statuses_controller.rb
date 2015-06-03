@@ -8,7 +8,7 @@ class Admin::TaskStatusesController < ApplicationController
   def show
     @task_status = TaskStatus.find(params[:id]).tasks.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
-    redirect_to admin_task_statuses_path, alert: 'The task status does not exist!'
+    redirect_to admin_task_statuses_path, alert: t('not_found')
   end
 
   def new
@@ -19,9 +19,9 @@ class Admin::TaskStatusesController < ApplicationController
     @task_status = TaskStatus.new(task_status_params)
 
     if @task_status.save
-      redirect_to admin_task_statuses_path, notice: 'The task status has been created!'
+      redirect_to admin_task_statuses_path, notice: t('created')
     else
-      flash[:alert] = 'Oooups! Something went wrong'
+      flash[:alert] = t('error')
       render 'new'
     end
   end
@@ -31,9 +31,9 @@ class Admin::TaskStatusesController < ApplicationController
 
   def update
     if @task_status.update(task_status_params)
-      redirect_to admin_task_statuses_path, notice: 'The task status has been updated!'
+      redirect_to admin_task_statuses_path, notice: t('updated')
     else
-      flash[:alert] = 'Oooups! Something went wrong'
+      flash[:alert] = t('error')
       render 'edit'
     end
   end
@@ -41,7 +41,7 @@ class Admin::TaskStatusesController < ApplicationController
   def destroy
     @task_status.destroy
 
-    redirect_to admin_task_statuses_path, notice: 'The task status has been deleted!'
+    redirect_to admin_task_statuses_path, notice: t('deleted')
   end
 
   private

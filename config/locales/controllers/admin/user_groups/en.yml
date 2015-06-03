@@ -1,0 +1,6 @@
+en:
+  not_found: The user group does not exist!
+  created: The user group has been created!
+  error: Oooups! Something went wrong
+  updated: The user group has been updated!
+  deleted: The user group has been deleted!
