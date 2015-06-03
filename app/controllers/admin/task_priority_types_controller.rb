@@ -1,4 +1,4 @@
-class Admin::TaskPriorityTypesController < ApplicationController
+class Admin::TaskPriorityTypesController < Admin::AdminController
   before_action :find_task_priority_type, only: [:edit, :update, :destroy]
 
   def index

@@ -1,4 +1,4 @@
-class Admin::TaskStatusesController < ApplicationController
+class Admin::TaskStatusesController < Admin::AdminController
   before_action :find_task_status, only: [:edit, :update, :destroy]
 
   def index

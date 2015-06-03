@@ -1,4 +1,4 @@
-class Admin::PostCategoriesController < ApplicationController
+class Admin::PostCategoriesController < Admin::AdminController
   before_action :find_post_category, only: [:edit, :update, :destroy]
 
   def index
