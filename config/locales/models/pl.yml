@@ -1,0 +1,37 @@
+pl:
+  activerecord:
+    attributes:
+      post:
+        title: Tytuł
+        body: Treść
+        category_id: Kategoria
+        author: Autor
+        published: Opublikowany
+      post_category:
+        name: Nazwa
+      task:
+        name: Nazwa
+        description: Opis
+        progress: Postęp
+        status_id: Status
+        priority_id: Priorytet
+        author_id: Autor
+      task_priority_type:
+        name: Nazwa
+      task_status:
+        name: Nazwa
+      user:
+        email: E-mail
+        admin: Admin
+        username: Nazwa użytkownika
+        group_id: Grupa
+        password: Hasło
+        password_confirmation: Potwierdzenie hasła
+      user_group:
+        name: Nazwa
+    errors:
+      messages:
+        blank: nie może być puste
+        confirmation: "nie pasuje do %{attribute}"
+        invalid: jest niepoprawne
+        taken: jest już zajęte

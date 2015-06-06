@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    attributes:
+      post:
+        title: Title
+        body: Body
+        category_id: Category
+        author: Author
+        published: Published
+      post_category:
+        name: Name
+      task:
+        name: Name
+        description: Description
+        progress: Progress
+        status_id: Status
+        priority_id: Priority
+        author_id: Author
+      task_priority_type:
+        name: Name
+      task_status:
+        name: Name
+      user:
+        email: E-mail
+        admin: Admin
+        username: Username
+        group_id: Group
+        password: Password
+        password_confirmation: Password confirmation
+      user_group:
+        name: Name
