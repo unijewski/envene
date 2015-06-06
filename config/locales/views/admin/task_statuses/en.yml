@@ -1,0 +1,6 @@
+en:
+  task_statuses: Task statuses
+  task_status_edit: Edit the task status
+  task_status_delete_confirmation: Are you sure? This action will delete all tasks assigned to this status!
+  task_status_create: Create a task status
+  task_status_tasks: "Tasks with %{task_status} status"

@@ -1,0 +1,6 @@
+pl:
+  task_statuses: Statusy zadań
+  task_status_edit: Edytuj status zadania
+  task_status_delete_confirmation: Jesteś pewien/pewna? Ta akcja usunie wszystkie zadania przypisane do tego statusu!
+  task_status_create: Stwórz status zadania
+  task_status_tasks: "Zadania o statusie %{task_status}"

@@ -3,13 +3,13 @@
     .col-md-12
       %br
       %br
-      %h2 Permission denied
+      %h2= t('denied')
       %h5 Envene
       %br
 
-  %p Sorry, but it looks that you do not have permissions to see this site.
+  %p= t('note')
 
   - if !user_signed_in?
     %p
-      Please,
-      = link_to 'sign in', new_user_session_path
+      #{t('please')},
+      = link_to t('sign_in').downcase + '.', new_user_session_path

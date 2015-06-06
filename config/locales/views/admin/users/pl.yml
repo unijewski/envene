@@ -1,0 +1,8 @@
+pl:
+  user_edit: Edytuj użytkownika
+  user_delete_confirmation: Jesteś pewien/pewna? Ta akcja usunie wszystkie zadania i posty przypisane do tego użytkownika!
+  user_create: Stwórz użytkownika
+  user_search_placeholder: Wpisz e-mail lub nazwę użytkownika...
+  change_password: Zmień swoje hasło
+  user_tasks: Zadania utworzone przez tego użytkownika
+  user_posts: Posty napisane przez tego użytkownika

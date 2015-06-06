@@ -1,0 +1,6 @@
+pl:
+  post_categories: Kategorie postów
+  post_category_edit: Edytuj kategorię postu
+  post_category_delete_confirmation: Jesteś pewien/pewna? Ta akcja usunie wszystkie posty przypisane do tej kategorii!
+  post_category_create: Stwórz kategorię postu
+  post_category_posts: "Posty w kategorii %{post_category}"

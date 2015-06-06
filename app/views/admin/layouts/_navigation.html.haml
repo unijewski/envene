@@ -6,106 +6,120 @@
       %li
         %a{href: admin_dashboard_path, class: current_path(admin_dashboard_path)}
           %i.fa.fa-dashboard.fa-3x
-          Dashboard
+          = t('dashboard')
       %li
         %a{href: '#', class: current_path(admin_users_path)}
           %i.fa.fa-user.fa-3x
-          Users
+          = t('users')
           %span.fa.arrow
         %ul.nav.nav-second-level
           %li
             %a{href: admin_users_path}
               %i.fa.fa-list
-              List
+              = t('list')
           %li
             %a{href: new_admin_user_path}
               %i.fa.fa-user-plus
-              Add new
+              = t('add')
           %li
             %a{href: admin_change_password_path}
               %i.fa.fa-lock
-              Change password
+              = t('password')
           %li
             %a{href: '#'}
               %i.fa.fa-users
-              Groups
+              = t('groups')
               %span.fa.arrow
             %ul.nav.nav-third-level
               %li
                 %a{href: admin_user_groups_path}
                   %i.fa.fa-list
-                  List
+                  = t('list')
               %li
                 %a{href: new_admin_user_group_path}
                   %i.fa.fa-plus-square
-                  Add new
+                  = t('add')
       %li
         %a{href: '#', class: current_path(admin_tasks_path)}
           %i.fa.fa-check-square-o.fa-3x
-          Tasks
+          = t('tasks')
           %span.fa.arrow
         %ul.nav.nav-second-level
           %li
             %a{href: admin_tasks_path}
               %i.fa.fa-list
-              List
+              = t('list')
           %li
             %a{href: new_admin_task_path}
               %i.fa.fa-plus-square
-              Add new
+              = t('add')
           %li
             %a{href: '#'}
               %i.fa.fa-toggle-on
-              Statuses
+              = t('statuses')
               %span.fa.arrow
             %ul.nav.nav-third-level
               %li
                 %a{href: admin_task_statuses_path}
                   %i.fa.fa-list
-                  List
+                  = t('list')
               %li
                 %a{href: new_admin_task_status_path}
                   %i.fa.fa-plus-square
-                  Add new
+                  = t('add')
           %li
             %a{href: '#'}
               %i.fa.fa-star
-              Priority types
+              = t('priorities')
               %span.fa.arrow
             %ul.nav.nav-third-level
               %li
                 %a{href: admin_task_priority_types_path}
                   %i.fa.fa-list
-                  List
+                  = t('list')
               %li
                 %a{href: new_admin_task_priority_type_path}
                   %i.fa.fa-plus-square
-                  Add new
+                  = t('add')
       %li
         %a{href: '#', class: current_path(admin_posts_path)}
           %i.fa.fa-newspaper-o.fa-3x
-          Posts
+          = t('posts')
           %span.fa.arrow
         %ul.nav.nav-second-level
           %li
             %a{href: admin_posts_path}
               %i.fa.fa-list
-              List
+              = t('list')
           %li
             %a{href: new_admin_post_path}
               %i.fa.fa-plus-square
-              Add new
+              = t('add')
           %li
             %a{href: '#'}
               %i.fa.fa-bars
-              Categories
+              = t('categories')
               %span.fa.arrow
             %ul.nav.nav-third-level
               %li
                 %a{href: admin_post_categories_path}
                   %i.fa.fa-list
-                  List
+                  = t('list')
               %li
                 %a{href: new_admin_post_category_path}
                   %i.fa.fa-plus-square
-                  Add new
+                  = t('add')
+      %li
+        %a{href: '#'}
+          %i.fa.fa-globe.fa-3x
+          = t('language')
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            %a{href: change_locale_path('en')}
+              %i.fa.fa-flag
+              = t('english')
+          %li
+            %a{href: change_locale_path('pl')}
+              %i.fa.fa-flag
+              = t('polish')

@@ -1,0 +1,13 @@
+pl:
+  add: Dodaj
+  password: Zmień hasło
+  groups: Grupy
+  statuses: Statusy
+  priorities: Typy priorytetów
+  categories: Kategorie
+  language: Język
+  english: Angielski
+  polish: Polski
+  last_access: Ostatni dostęp
+  sign_out: Wyloguj się
+  sign_in: Zaloguj się

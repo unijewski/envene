@@ -2,22 +2,22 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
+        %h2= t('user_groups')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            Users in #{@user_group.first.group.name} group
+            = t('user_group_posts', user_group: @user_group.first.group.name)
           .panel-body
             .table-responsive
               %table.table.table-striped
                 %thead
                   %tr
                     %th #
-                    %th Gravatar
-                    %th Username
-                    %th E-mail
+                    %th= t('gravatar')
+                    %th= t('username')
+                    %th= t('email')
                 %tbody
                 - @user_group.each do |user|
                   %tr
@@ -25,7 +25,7 @@
                     %td= gravatar_for(user, size: 20)
                     %td= user.username
                     %td= user.email
-                    %td= link_to 'Show', admin_user_path(user), class: 'btn btn-primary btn-xs'
+                    %td= link_to t('show'), admin_user_path(user), class: 'btn btn-primary btn-xs'
             .row
               .col-sm-6
-                = will_paginate @user_group, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+                = will_paginate @user_group, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

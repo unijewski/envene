@@ -2,7 +2,7 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
+        %h2= t('posts')
     %hr
     .row
       .col-md-12
@@ -17,14 +17,14 @@
                     %table#dataTables-example.table.table-striped.table-bordered.table-hover.dataTable.no-footer{'aria-describedby' => 'dataTables-example_info'}
                       %tbody
                         %tr
-                          %td Published
-                          %td= @post.published? ? 'Yes' : 'No'
-                          %td Author
+                          %td #{t('published')}:
+                          %td= @post.published? ? t('yes') : t('no')
+                          %td #{t('author')}:
                           %td= link_to @post.author.username, admin_user_path(@post.author)
                         %tr
-                          %td Category
+                          %td #{t('category')}:
                           %td= @post.category.name
-                          %td Created
+                          %td #{t('created')}:
                           %td= @post.created_at.strftime('%Y/%m/%d')
             .row
               .col-md-12
@@ -38,12 +38,12 @@
                   .btn-group{role: 'group'}
                     = link_to :back, class: 'btn btn-warning' do
                       %i.fa.fa-arrow-left
-                      Back
+                      = t('back')
                   .btn-group{role: 'group'}
                     = link_to edit_admin_post_path(@post), class: 'btn btn-primary' do
                       %i.fa.fa-edit
-                      Edit
+                      = t('edit')
                   .btn-group{role: 'group'}
-                    = link_to admin_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+                    = link_to admin_post_path(@post), method: :delete, data: { confirm: t('delete_confirmation') }, class: 'btn btn-danger' do
                       %i.fa.fa-pencil
-                      Delete
+                      = t('destroy')

@@ -1,0 +1,6 @@
+en:
+  task_priority_types: Task priority types
+  task_priority_type_edit: Edit the task priority type
+  task_priority_type_delete_confirmation: Are you sure? This action will delete all tasks assigned to this priority type!
+  task_priority_type_create: Create a task priority type
+  task_priority_type_tasks: "Tasks with %{task_priority_type} priority type"

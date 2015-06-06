@@ -4,4 +4,4 @@
   = f.input :progress, collection: 0.step(100, 10), include_blank: false
   = f.input :status_id, collection: TaskStatus.all.pluck(:name, :id), include_blank: false
   = f.input :priority_id, collection: TaskPriorityType.all.pluck(:name, :id), include_blank: false
-  = f.button :submit, @task.new_record? ? 'Create' : 'Edit', class: 'btn btn-success'
+  = f.button :submit, @task.new_record? ? t('create') : t('edit'), class: 'btn btn-success'

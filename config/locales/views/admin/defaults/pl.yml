@@ -1,0 +1,37 @@
+pl:
+  create: Stwórz
+  edit: Edytuj
+  change: Zmień
+  show: Pokaż
+  destroy: Usuń
+  list: Lista
+  previous_page: Wróć
+  next_page: Dalej
+  back: Wstecz
+  'yes': 'Tak'
+  'no': 'Nie'
+  name: Nazwa
+  title: Tytuł
+  published: Opublikowany
+  author: Autor
+  search: Szukaj
+  category: Kategoria
+  created: Utworzono
+  progress: Postęp
+  status: Status
+  priority: Priorytet
+  gravatar: Gravatar
+  username: Nazwa użytkownika
+  email: E-mail
+  registered: Zarejestrowano
+  admin: Admin
+  sign_in_count: Liczba logowań
+  last_sign_in: Ostatnie logowanie
+  current_ip: Obecne IP
+  last_ip: Ostatnie IP
+  group: Grupa
+  dashboard: Panel główny
+  users: Użytkownicy
+  tasks: Zadania
+  posts: Posty
+  delete_confirmation: Jesteś pewien/pewna?

@@ -2,28 +2,28 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
+        %h2= t('task_statuses')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            List
+            = t('list')
           .panel-body
             .table-responsive
               %table.table.table-striped
                 %thead
                   %tr
                     %th #
-                    %th Name
+                    %th= t('name')
                 %tbody
                 - @task_statuses.each do |task_status|
                   %tr
                     %td= task_status.id
                     %td= task_status.name
-                    %td= link_to 'Show', admin_task_status_path(task_status), class: 'btn btn-primary btn-xs'
-                    %td= link_to 'Edit', edit_admin_task_status_path(task_status), class: 'btn btn-warning btn-xs'
-                    %td= link_to 'Destroy', admin_task_status_path(task_status), method: :delete, data: { confirm: 'Are you sure? This action will delete all tasks assigned to this status!' }, class: 'btn btn-danger btn-xs'
+                    %td= link_to t('show'), admin_task_status_path(task_status), class: 'btn btn-primary btn-xs'
+                    %td= link_to t('edit'), edit_admin_task_status_path(task_status), class: 'btn btn-warning btn-xs'
+                    %td= link_to t('destroy'), admin_task_status_path(task_status), method: :delete, data: { confirm: t('task_status_delete_confirmation') }, class: 'btn btn-danger btn-xs'
             .row
               .col-sm-6
-                = will_paginate @task_statuses, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+                = will_paginate @task_statuses, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

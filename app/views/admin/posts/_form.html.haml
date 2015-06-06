@@ -3,4 +3,4 @@
   = f.input :body, as: :pagedown, input_html: { preview: true, rows: 20 }
   = f.input :category_id, collection: PostCategory.all.pluck(:name, :id), include_blank: false
   = f.input :published, as: :boolean
-  = f.button :submit, @post.new_record? ? 'Create' : 'Edit', class: 'btn btn-success'
+  = f.button :submit, @post.new_record? ? t('create') : t('edit'), class: 'btn btn-success'

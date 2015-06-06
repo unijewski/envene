@@ -2,23 +2,23 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
+        %h2= t('task_statuses')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            Tasks with #{@task_status.first.status.name} status
+            = t('task_status_tasks', task_status: @task_status.first.status.name)
           .panel-body
             .table-responsive
               %table.table.table-striped
                 %thead
                   %tr
                     %th #
-                    %th Name
-                    %th Progress
-                    %th Priority
-                    %th Author
+                    %th= t('name')
+                    %th= t('progress')
+                    %th= t('priority')
+                    %th= t('author')
                 %tbody
                 - @task_status.each do |task|
                   %tr
@@ -27,10 +27,10 @@
                     %td
                       .progress.progress-striped
                         .progress-bar.progress-bar-success{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => "#{task.progress}", :role => 'progressbar', :style => "width: #{task.progress}%"}
-                          %span.sr-only #{task.progress}% Complete (success)
+                          %span.sr-only #{task.progress}%
                     %td= task.priority.name
                     %td= task.author.username
-                    %td= link_to 'Show', admin_task_path(task), class: 'btn btn-primary btn-xs'
+                    %td= link_to t('show'), admin_task_path(task), class: 'btn btn-primary btn-xs'
             .row
               .col-sm-6
-                = will_paginate @task_status, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+                = will_paginate @task_status, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

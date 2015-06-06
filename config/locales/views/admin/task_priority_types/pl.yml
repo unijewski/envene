@@ -1,0 +1,6 @@
+pl:
+  task_priority_types: Typy priorytetów zadań
+  task_priority_type_edit: Edytuj typ priorytetu zadania
+  task_priority_type_delete_confirmation: Jesteś pewien/pewna? Ta akcja usunie wszystkie zadania przypisane do tego typu priorytetu!
+  task_priority_type_create: Stwórz typ priorytetu zadania
+  task_priority_type_tasks: "Zadania o typie priorytetu %{task_priority_type}"

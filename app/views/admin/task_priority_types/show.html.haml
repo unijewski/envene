@@ -2,23 +2,23 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
+        %h2= t('task_priority_types')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            Tasks with #{@task_priority_type.first.status.name} status
+            = t('task_priority_type_tasks', task_priority_type: @task_priority_type.first.priority.name)
           .panel-body
             .table-responsive
               %table.table.table-striped
                 %thead
                   %tr
                     %th #
-                    %th Name
-                    %th Progress
-                    %th Status
-                    %th Author
+                    %th= t('name')
+                    %th= t('progres')
+                    %th= t('status')
+                    %th= t('author')
                 %tbody
                 - @task_priority_type.each do |task|
                   %tr
@@ -30,7 +30,7 @@
                           %span.sr-only #{task.progress}% Complete (success)
                     %td= task.status.name
                     %td= task.author.username
-                    %td= link_to 'Show', admin_task_path(task), class: 'btn btn-primary btn-xs'
+                    %td= link_to t('show'), admin_task_path(task), class: 'btn btn-primary btn-xs'
             .row
               .col-sm-6
-                = will_paginate @task_priority_type, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+                = will_paginate @task_priority_type, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

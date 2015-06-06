@@ -2,14 +2,13 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
-        %h5 To create an #{page_header_singularized} fill in all fields
+        %h2= t('users')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            Create a new #{page_header_singularized}
+            = t('user_create')
           .panel-body
             .row
               .col-md-6
@@ -20,4 +19,4 @@
                   = f.input :password
                   = f.input :password_confirmation
                   = f.input :admin, as: :boolean
-                  = f.button :submit, 'Create', class: 'btn btn-success'
+                  = f.button :submit, t('create'), class: 'btn btn-success'

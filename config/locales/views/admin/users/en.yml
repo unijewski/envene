@@ -1,0 +1,8 @@
+en:
+  user_edit: Edit the user
+  user_delete_confirmation: Are you sure? This action will delete all tasks and posts assigned to this user!
+  user_create: Create a user
+  user_search_placeholder: Type an email or an username...
+  change_password: Change your password
+  user_tasks: Tasks created by this user
+  user_posts: Posts written by this user

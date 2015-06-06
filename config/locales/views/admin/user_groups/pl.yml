@@ -1,0 +1,6 @@
+pl:
+  user_groups: Grupy użytkowników
+  user_group_edit: Edytuj grupę użytkownika
+  user_group_delete_confirmation: Jesteś pewien/pewna? Ta akcja usunie wszystkich użytkowników przypisanych do tej grupy!
+  user_group_create: Stwórz grupę użytkownika
+  user_group_posts: "Użytkownicy w grupie %{user_group}"

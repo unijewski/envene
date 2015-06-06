@@ -2,20 +2,20 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
+        %h2= t('tasks')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            List
+            = t('list')
           .panel-body
             .row
               .col-md-12
                 #dataTables-example_filter.dataTables_filter
                   = simple_form_for :task, url: admin_tasks_path, html: { method: :get, class: 'form-inline' } do |f|
-                    = f.input :search, label: false, placeholder: 'Type a task name...', input_html: { size: 40 }
-                    = f.button :submit, 'Search'
+                    = f.input :search, label: false, placeholder: t('task_search_placeholder'), input_html: { size: 40 }
+                    = f.button :submit, t('search')
             %br
             .row
               .table-responsive
@@ -23,11 +23,11 @@
                   %thead
                     %tr
                       %th #
-                      %th Name
-                      %th Progress
-                      %th Status
-                      %th Priority
-                      %th Author
+                      %th= t('name')
+                      %th= t('progress')
+                      %th= t('status')
+                      %th= t('priority')
+                      %th= t('author')
                   %tbody
                   - @tasks.each do |task|
                     %tr
@@ -36,13 +36,13 @@
                       %td
                         .progress.progress-striped
                           .progress-bar.progress-bar-success{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => "#{task.progress}", :role => 'progressbar', :style => "width: #{task.progress}%"}
-                            %span.sr-only #{task.progress}% Complete (success)
+                            %span.sr-only #{task.progress}%
                       %td= task.status.name
                       %td= task.priority.name
                       %td= task.author.username
-                      %td= link_to 'Show', admin_task_path(task), class: 'btn btn-primary btn-xs'
-                      %td= link_to 'Edit', edit_admin_task_path(task), class: 'btn btn-warning btn-xs'
-                      %td= link_to 'Destroy', admin_task_path(task), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+                      %td= link_to t('show'), admin_task_path(task), class: 'btn btn-primary btn-xs'
+                      %td= link_to t('edit'), edit_admin_task_path(task), class: 'btn btn-warning btn-xs'
+                      %td= link_to t('destroy'), admin_task_path(task), method: :delete, data: { confirm: t('delete_confirmation') }, class: 'btn btn-danger btn-xs'
             .row
               .col-sm-6
-                = will_paginate @tasks, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+                = will_paginate @tasks, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

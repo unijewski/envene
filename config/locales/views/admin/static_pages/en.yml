@@ -1,0 +1,5 @@
+en:
+  denied: Permission denied
+  note: 'Sorry, but it looks that you do not have permissions to see this site.'
+  please: Please,
+  welcome: "Welcome %{user}, love to see you back."

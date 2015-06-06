@@ -2,8 +2,8 @@
   #page-inner
     .row
       .col-md-12
-        %h2 Admin Dashboard
-        %h5 Welcome #{current_user.username}, love to see you back.
+        %h2= t('dashboard')
+        %h5= t('welcome', user: current_user.username)
     %hr
     .row
       .col-md-4.col-sm-4.col-xs-4
@@ -12,18 +12,18 @@
             %i.fa.fa-users
           .text-box
             %p.main-text= User.count
-            %p.text-muted Users
+            %p.text-muted= t('users')
       .col-md-4.col-sm-4.col-xs-4
         .panel.panel-back.noti-box
           %span.icon-box.bg-color-blue.set-icon
             %i.fa.fa-check-square-o
           .text-box
             %p.main-text= Task.count
-            %p.text-muted Tasks
+            %p.text-muted= t('tasks')
       .col-md-4.col-sm-4.col-xs-4
         .panel.panel-back.noti-box
           %span.icon-box.bg-color-brown.set-icon
             %i.fa.fa-newspaper-o
           .text-box
             %p.main-text= Post.count
-            %p.text-muted Posts
+            %p.text-muted= t('posts')

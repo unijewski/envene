@@ -2,20 +2,20 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
+        %h2= t('posts')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            List
+            = t('list')
           .panel-body
             .row
               .col-md-12
                 #dataTables-example_filter.dataTables_filter
                   = simple_form_for :post, url: admin_posts_path, html: { method: :get, class: 'form-inline' } do |f|
-                    = f.input :search, label: false, placeholder: 'Type a title...', input_html: { size: 40 }
-                    = f.button :submit, 'Search'
+                    = f.input :search, label: false, placeholder: t('post_search_placeholder'), input_html: { size: 40 }
+                    = f.button :submit, t('search')
             %br
             .row
               .table-responsive
@@ -23,21 +23,21 @@
                   %thead
                     %tr
                       %th #
-                      %th Title
-                      %th Published
-                      %th Author
-                      %th Category
+                      %th= t('title')
+                      %th= t('published')
+                      %th= t('author')
+                      %th= t('category')
                   %tbody
                   - @posts.each do |post|
                     %tr
                       %td= post.id
                       %td= truncate(post.title, length: 45)
-                      %td= post.published? ? 'Yes' : 'No'
+                      %td= post.published? ? t('yes') : t('no')
                       %td= post.author.username
                       %td= post.category.name
-                      %td= link_to 'Show', admin_post_path(post), class: 'btn btn-primary btn-xs'
-                      %td= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-warning btn-xs'
-                      %td= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+                      %td= link_to t('show'), admin_post_path(post), class: 'btn btn-primary btn-xs'
+                      %td= link_to t('edit'), edit_admin_post_path(post), class: 'btn btn-warning btn-xs'
+                      %td= link_to t('destroy'), admin_post_path(post), method: :delete, data: { confirm: t('delete_confirmation') }, class: 'btn btn-danger btn-xs'
             .row
               .col-sm-6
-                = will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+                = will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

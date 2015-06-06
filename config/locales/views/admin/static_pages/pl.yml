@@ -1,0 +1,5 @@
+pl:
+  denied: Odmowa uprawnień
+  note: 'Przepraszamy, ale wygląda na to, że nie masz dostępu by zobaczyć tę stronę.'
+  please: 'Proszę'
+  welcome: "Witaj %{user}, dobrze Cię widzieć z powrotem."

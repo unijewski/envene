@@ -2,13 +2,12 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
+        %h2= t('users')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            Basic data about the #{page_header_singularized}
           .panel-body
             .row
               .col-md-9
@@ -18,31 +17,31 @@
                     %table#dataTables-example.table.table-striped.table-bordered.table-hover.dataTable.no-footer{'aria-describedby' => 'dataTables-example_info'}
                       %tbody
                         %tr
-                          %td E-mail:
+                          %td #{t('email')}:
                           %td= @user.email
                         %tr
-                          %td Group:
+                          %td #{t('group')}:
                           %td= @user.group.name
                         %tr
-                          %td Sign in count:
+                          %td #{t('sign_in_count')}:
                           %td= @user.sign_in_count
                         %tr
-                          %td Last sign in:
+                          %td #{t('last_sign_in')}:
                           %td= @user.last_sign_in_at.try(:strftime, '%Y/%m/%d %H:%M:%S')
                         %tr
-                          %td Current IP:
+                          %td #{t('current_ip')}:
                           %td= @user.current_sign_in_ip
                         %tr
-                          %td Last IP:
+                          %td #{t('last_ip')}:
                           %td= @user.last_sign_in_ip
                         %tr
-                          %td Registered:
+                          %td #{t('registered')}:
                           %td= @user.created_at.strftime('%Y/%m/%d %H:%M:%S')
                         %tr
-                          %td Admin:
-                          %td= @user.admin? ? 'Yes' : 'No'
+                          %td #{t('admin')}:
+                          %td= @user.admin? ? t('yes') : t('no')
               .col-md-3
-                %h3 Gravatar
+                %h3= t('gravatar')
                 = gravatar_for(@user)
             .row
               .col-md-12{style: 'margin-top: 15px;'}
@@ -50,30 +49,30 @@
                   .btn-group{role: 'group'}
                     = link_to :back, class: 'btn btn-warning' do
                       %i.fa.fa-arrow-left
-                      Back
+                      = t('back')
                   .btn-group{role: 'group'}
                     = link_to edit_admin_user_path(@user), class: 'btn btn-primary' do
                       %i.fa.fa-edit
-                      Edit
+                      = t('edit')
                   .btn-group{role: 'group'}
-                    = link_to admin_user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+                    = link_to admin_user_path(@user), method: :delete, data: { confirm: t('user_delete_confirmation') }, class: 'btn btn-danger' do
                       %i.fa.fa-pencil
-                      Delete
+                      = t('destroy')
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            Tasks created by this user
+            = t('user_tasks')
           .panel-body
             .table-responsive
               %table.table.table-striped
                 %thead
                   %tr
                     %th #
-                    %th Name
-                    %th Progress
-                    %th Status
-                    %th Priority
+                    %th= t('name')
+                    %th= t('progress')
+                    %th= t('status')
+                    %th= t('priority')
                 %tbody
                 - @user_tasks.each do |task|
                   %tr
@@ -82,35 +81,35 @@
                     %td
                       .progress.progress-striped
                         .progress-bar.progress-bar-success{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => "#{task.progress}", :role => 'progressbar', :style => "width: #{task.progress}%"}
-                          %span.sr-only #{task.progress}% Complete (success)
+                          %span.sr-only #{task.progress}%
                     %td= task.status.name
                     %td= task.priority.name
-                    %td= link_to 'Show', admin_task_path(task), class: 'btn btn-primary btn-xs'
+                    %td= link_to t('show'), admin_task_path(task), class: 'btn btn-primary btn-xs'
             .row
               .col-sm-6
-                = will_paginate @user_tasks, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+                = will_paginate @user_tasks, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            Posts written by this user
+            = t('user_posts')
           .panel-body
             .table-responsive
               %table.table.table-striped
                 %thead
                   %tr
                     %th #
-                    %th Title
-                    %th Published
-                    %th Category
+                    %th= t('title')
+                    %th= t('published')
+                    %th= t('category')
                 %tbody
                 - @user_posts.each do |post|
                   %tr
                     %td= post.id
                     %td= truncate(post.title, length: 60)
-                    %td= post.published? ? 'Yes' : 'No'
+                    %td= post.published? ? t('yes') : t('no')
                     %td= post.category.name
-                    %td= link_to 'Show', admin_post_path(post), class: 'btn btn-primary btn-xs'
+                    %td= link_to t('show'), admin_post_path(post), class: 'btn btn-primary btn-xs'
             .row
               .col-sm-6
-                = will_paginate @user_posts, renderer: BootstrapPagination::Rails, previous_label: 'Previous', next_label: 'Next', inner_window: 2
+                = will_paginate @user_posts, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

@@ -1,0 +1,37 @@
+en:
+  create: Create
+  edit: Edit
+  change: Change
+  show: Show
+  destroy: Destroy
+  list: List
+  previous_page: Previous
+  next_page: Next
+  back: Back
+  'yes': 'Yes'
+  'no': 'No'
+  name: Name
+  title: Title
+  published: Published
+  author: Author
+  search: Search
+  category: Category
+  created: Created
+  progress: Progress
+  status: Status
+  priority: Priority
+  gravatar: Gravatar
+  username: Username
+  email: E-mail
+  registered: Registered
+  admin: Admin
+  sign_in_count: Sign in count
+  last_sign_in: Last sign in
+  current_ip: Current IP
+  last_ip: Last IP
+  group: Grupa
+  dashboard: Dashboard
+  users: Users
+  tasks: Tasks
+  posts: Posts
+  delete_confirmation: Are you sure?

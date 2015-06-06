@@ -2,14 +2,13 @@
   #page-inner
     .row
       .col-md-12
-        %h2= page_header
-        %h5 To create a #{page_header_singularized} fill in the fields
+        %h2= t('posts')
     %hr
     .row
       .col-md-12
         .panel.panel-default
           .panel-heading
-            Create a #{page_header_singularized}
+            = t('post_create')
           .panel-body
             .row
               .col-md-6
