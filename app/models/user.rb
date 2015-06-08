@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
   validates :username, presence: true,
                        format: { with: USERNAME_REGEX },
                        uniqueness: { case_sensitive: false }
-  validates :group, presence: true
 
   def self.search(keyword)
     where('email ILIKE ? OR username ILIKE ?', "%#{keyword}%", "%#{keyword}%")
