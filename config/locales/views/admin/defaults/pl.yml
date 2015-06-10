@@ -16,7 +16,7 @@ pl:
   author: Autor
   search: Szukaj
   category: Kategoria
-  created: Utworzono
+  created_at: Utworzono
   progress: Postęp
   status: Status
   priority: Priorytet

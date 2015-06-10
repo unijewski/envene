@@ -16,7 +16,7 @@ en:
   author: Author
   search: Search
   category: Category
-  created: Created
+  created_at: Created
   progress: Progress
   status: Status
   priority: Priority
