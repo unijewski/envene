@@ -1,6 +1,6 @@
 pl:
   add: Dodaj
-  password: Zmień hasło
+  change_password: Zmień hasło
   groups: Grupy
   statuses: Statusy
   priorities: Typy priorytetów

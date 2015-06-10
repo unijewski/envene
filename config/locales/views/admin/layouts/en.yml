@@ -1,6 +1,6 @@
 en:
   add: Add new
-  password: Change password
+  change_password: Change password
   groups: Groups
   statuses: Statuses
   priorities: Priority types
