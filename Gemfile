@@ -20,11 +20,11 @@ gem 'font-awesome-rails'
 gem 'will_paginate-bootstrap'
 gem 'pagedown-bootstrap-rails'
 gem 'i18n'
+gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'pry'
-  gem 'faker'
 end
 
 group :test do
