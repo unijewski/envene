@@ -1,6 +1,6 @@
 pl:
-  not_found: Status zadania nie istnieje!
-  created: Status zadania został utworzony!
-  error: Ups! Coś poszło nie tak
-  updated: Status zadania został zaktualizowany!
-  deleted: Status zadania został usunięty!
+  task_status_not_found: Status zadania nie istnieje!
+  task_status_created: Status zadania został utworzony!
+  task_status_error: Ups! Coś poszło nie tak
+  task_status_updated: Status zadania został zaktualizowany!
+  task_status_deleted: Status zadania został usunięty!

@@ -1,6 +1,6 @@
 pl:
-  not_found: Typ priorytetu zadania nie istnieje!
-  created: Typ priorytetu zadania został utworzony!
-  error: Ups! Coś poszło nie tak
-  updated: Typ priorytetu zadania został zaktualizowany!
-  deleted: Typ priorytetu zadania został usunięty!
+  task_priority_type_not_found: Typ priorytetu zadania nie istnieje!
+  task_priority_type_created: Typ priorytetu zadania został utworzony!
+  task_priority_type_error: Ups! Coś poszło nie tak
+  task_priority_type_updated: Typ priorytetu zadania został zaktualizowany!
+  task_priority_type_deleted: Typ priorytetu zadania został usunięty!

@@ -1,6 +1,6 @@
 en:
-  not_found: The post category does not exist!
-  created: The post category has been created!
-  error: Oooups! Something went wrong
-  updated: The post category has been updated!
-  deleted: The post category has been deleted!
+  post_category_not_found: The post category does not exist!
+  post_category_created: The post category has been created!
+  post_category_error: Oooups! Something went wrong
+  post_category_updated: The post category has been updated!
+  post_category_deleted: The post category has been deleted!

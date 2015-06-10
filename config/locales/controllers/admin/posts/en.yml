@@ -1,6 +1,6 @@
 en:
-  not_found: The post does not exist!
-  created: The post has been created!
-  error: Oooups! Something went wrong
-  updated: The post has been updated!
-  deleted: The post has been deleted!
+  post_not_found: The post does not exist!
+  post_created: The post has been created!
+  post_error: Oooups! Something went wrong
+  post_updated: The post has been updated!
+  post_deleted: The post has been deleted!

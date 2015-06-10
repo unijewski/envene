@@ -8,7 +8,7 @@ class Admin::TaskPriorityTypesController < Admin::AdminController
   def show
     @task_priority_type = TaskPriorityType.find(params[:id]).tasks.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
-    redirect_to admin_task_priority_types_path, alert: t('not_found')
+    redirect_to admin_task_priority_types_path, alert: t('task_priority_type_not_found')
   end
 
   def new
@@ -19,9 +19,9 @@ class Admin::TaskPriorityTypesController < Admin::AdminController
     @task_priority_type = TaskPriorityType.new(task_priority_type_params)
 
     if @task_priority_type.save
-      redirect_to admin_task_priority_types_path, notice: t('created')
+      redirect_to admin_task_priority_types_path, notice: t('task_priority_type_created')
     else
-      flash[:alert] = t('error')
+      flash[:alert] = t('task_priority_type_error')
       render 'new'
     end
   end
@@ -31,9 +31,9 @@ class Admin::TaskPriorityTypesController < Admin::AdminController
 
   def update
     if @task_priority_type.update(task_priority_type_params)
-      redirect_to admin_task_priority_types_path, notice: t('updated')
+      redirect_to admin_task_priority_types_path, notice: t('task_priority_type_updated')
     else
-      flash[:alert] = t('error')
+      flash[:alert] = t('task_priority_type_error')
       render 'edit'
     end
   end
@@ -41,7 +41,7 @@ class Admin::TaskPriorityTypesController < Admin::AdminController
   def destroy
     @task_priority_type.destroy
 
-    redirect_to admin_task_priority_types_path, notice: t('deleted')
+    redirect_to admin_task_priority_types_path, notice: t('task_priority_type_deleted')
   end
 
   private

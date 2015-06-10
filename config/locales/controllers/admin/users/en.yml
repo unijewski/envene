@@ -1,7 +1,7 @@
 en:
-  not_found: The user does not exist!
-  created: The user has been created!
-  error: Oooups! Something went wrong
-  password: Your password has been updated!
-  updated: The user has been updated!
-  deleted: The user has been deleted!
+  user_not_found: The user does not exist!
+  user_created: The user has been created!
+  user_error: Oooups! Something went wrong
+  user_password: Your password has been updated!
+  user_updated: The user has been updated!
+  user_deleted: The user has been deleted!

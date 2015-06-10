@@ -16,7 +16,7 @@ class Admin::UsersController < Admin::AdminController
     @user_tasks = find_user.tasks.order(:id).paginate(page: params[:page])
     @user_posts = find_user.posts.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
-    redirect_to admin_users_path, alert: t('not_found')
+    redirect_to admin_users_path, alert: t('user_not_found')
   end
 
   def new
@@ -27,9 +27,9 @@ class Admin::UsersController < Admin::AdminController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to admin_user_path(@user), notice: t('created')
+      redirect_to admin_user_path(@user), notice: t('user_created')
     else
-      flash[:alert] = t('error')
+      flash[:alert] = t('user_error')
       render 'new'
     end
   end
@@ -45,7 +45,7 @@ class Admin::UsersController < Admin::AdminController
     @user = User.find(current_user.id)
     if @user.update(user_params)
       sign_in @user, bypass: true
-      redirect_to admin_dashboard_path, notice: t('password')
+      redirect_to admin_dashboard_path, notice: t('user_password')
     else
       render 'edit'
     end
@@ -53,9 +53,9 @@ class Admin::UsersController < Admin::AdminController
 
   def update
     if @user.update(user_params)
-      redirect_to admin_users_path, notice: t('updated')
+      redirect_to admin_users_path, notice: t('user_updated')
     else
-      flash[:alert] = t('error')
+      flash[:alert] = t('user_error')
       render 'edit'
     end
   end
@@ -63,7 +63,7 @@ class Admin::UsersController < Admin::AdminController
   def destroy
     @user.destroy
 
-    redirect_to admin_users_path, notice: t('deleted')
+    redirect_to admin_users_path, notice: t('user_deleted')
   end
 
   private

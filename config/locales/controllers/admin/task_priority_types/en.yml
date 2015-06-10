@@ -1,6 +1,6 @@
 en:
-  not_found: The task priority type does not exist!
-  created: The task priority type has been created!
-  error: Oooups! Something went wrong
-  updated: The task priority type has been updated!
-  deleted: The task priority type has been deleted!
+  task_priority_type_not_found: The task priority type does not exist!
+  task_priority_type_created: The task priority type has been created!
+  task_priority_type_error: Oooups! Something went wrong
+  task_priority_type_updated: The task priority type has been updated!
+  task_priority_type_deleted: The task priority type has been deleted!

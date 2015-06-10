@@ -8,7 +8,7 @@ class Admin::UserGroupsController < Admin::AdminController
   def show
     @user_group = UserGroup.find(params[:id]).users.order(:id).paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
-    redirect_to admin_user_groups_path, alert: t('not_found')
+    redirect_to admin_user_groups_path, alert: t('user_group_not_found')
   end
 
   def new
@@ -19,9 +19,9 @@ class Admin::UserGroupsController < Admin::AdminController
     @user_group = UserGroup.new(user_group_params)
 
     if @user_group.save
-      redirect_to admin_user_groups_path, notice: t('created')
+      redirect_to admin_user_groups_path, notice: t('user_group_created')
     else
-      flash[:alert] = t('error')
+      flash[:alert] = t('user_group_error')
       render 'new'
     end
   end
@@ -31,9 +31,9 @@ class Admin::UserGroupsController < Admin::AdminController
 
   def update
     if @user_group.update(user_group_params)
-      redirect_to admin_user_groups_path, notice: t('updated')
+      redirect_to admin_user_groups_path, notice: t('user_group_updated')
     else
-      flash[:alert] = t('error')
+      flash[:alert] = t('user_group_error')
       render 'edit'
     end
   end
@@ -41,7 +41,7 @@ class Admin::UserGroupsController < Admin::AdminController
   def destroy
     @user_group.destroy
 
-    redirect_to admin_user_groups_path, notice: t('deleted')
+    redirect_to admin_user_groups_path, notice: t('user_group_deleted')
   end
 
   private

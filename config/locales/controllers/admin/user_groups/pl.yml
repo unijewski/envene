@@ -1,6 +1,6 @@
 pl:
-  not_found: Grupa użytkownika nie istnieje!
-  created: Grupa użytkownika została utworzona!
-  error: Ups! Coś poszło nie tak
-  updated: Grupa użytkownika została zaktualizowana!
-  deleted: Grupa użytkownika została usunięta!
+  user_group_not_found: Grupa użytkownika nie istnieje!
+  user_group_created: Grupa użytkownika została utworzona!
+  user_group_error: Ups! Coś poszło nie tak
+  user_group_updated: Grupa użytkownika została zaktualizowana!
+  user_group_deleted: Grupa użytkownika została usunięta!

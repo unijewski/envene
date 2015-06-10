@@ -14,7 +14,7 @@ class Admin::PostsController < Admin::AdminController
   def show
     find_post
   rescue ActiveRecord::RecordNotFound
-    redirect_to admin_posts_path, alert: t('not_found')
+    redirect_to admin_posts_path, alert: t('post_not_found')
   end
 
   def new
@@ -26,9 +26,9 @@ class Admin::PostsController < Admin::AdminController
     @post.author = current_user
 
     if @post.save
-      redirect_to admin_post_path(@post), notice: t('created')
+      redirect_to admin_post_path(@post), notice: t('post_created')
     else
-      flash[:alert] = t('error')
+      flash[:alert] = t('post_error')
       render 'new'
     end
   end
@@ -38,9 +38,9 @@ class Admin::PostsController < Admin::AdminController
 
   def update
     if @post.update(post_params)
-      redirect_to admin_posts_path, notice: t('updated')
+      redirect_to admin_posts_path, notice: t('post_updated')
     else
-      flash[:alert] = t('error')
+      flash[:alert] = t('post_error')
       render 'edit'
     end
   end
@@ -48,7 +48,7 @@ class Admin::PostsController < Admin::AdminController
   def destroy
     @post.destroy
 
-    redirect_to admin_posts_path, notice: t('deleted')
+    redirect_to admin_posts_path, notice: t('post_deleted')
   end
 
   private

@@ -1,6 +1,6 @@
 en:
-  not_found: The task status does not exist!
-  created: The task status has been created!
-  error: Oooups! Something went wrong
-  updated: The task status has been updated!
-  deleted: The task status has been deleted!
+  task_status_not_found: The task status does not exist!
+  task_status_created: The task status has been created!
+  task_status_error: Oooups! Something went wrong
+  task_status_updated: The task status has been updated!
+  task_status_deleted: The task status has been deleted!
