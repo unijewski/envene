@@ -8,7 +8,7 @@
       .col-md-12
         .panel.panel-default
           .panel-heading
-            = t('user_group_posts', user_group: @user_group.first.group.name)
+            = t('user_group_posts', user_group: @user_group_name)
           .panel-body
             .table-responsive
               %table.table.table-striped
@@ -19,7 +19,7 @@
                     %th= t('username')
                     %th= t('email')
                 %tbody
-                - @user_group.each do |user|
+                - @user_group_users.each do |user|
                   %tr
                     %td= user.id
                     %td= gravatar_for(user, size: 20)
@@ -28,4 +28,4 @@
                     %td= link_to t('show'), admin_user_path(user), class: 'btn btn-primary btn-xs'
             .row
               .col-sm-6
-                = will_paginate @user_group, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2
+                = will_paginate @user_group_users, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

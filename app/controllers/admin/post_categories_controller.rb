@@ -6,7 +6,9 @@ class Admin::PostCategoriesController < Admin::AdminController
   end
 
   def show
-    @post_category = PostCategory.find(params[:id]).posts.order(:id).paginate(page: params[:page])
+    post_category = PostCategory.find(params[:id])
+    @post_category_posts = post_category.posts.order(:id).paginate(page: params[:page])
+    @post_category_name = post_category.name
   rescue ActiveRecord::RecordNotFound
     redirect_to admin_post_categories_path, alert: t('post_category_not_found')
   end

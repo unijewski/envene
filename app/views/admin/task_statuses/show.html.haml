@@ -8,7 +8,7 @@
       .col-md-12
         .panel.panel-default
           .panel-heading
-            = t('task_status_tasks', task_status: @task_status.first.status.name)
+            = t('task_status_tasks', task_status: @task_status_name)
           .panel-body
             .table-responsive
               %table.table.table-striped
@@ -20,7 +20,7 @@
                     %th= t('priority')
                     %th= t('author')
                 %tbody
-                - @task_status.each do |task|
+                - @task_status_tasks.each do |task|
                   %tr
                     %td= task.id
                     %td= truncate(task.name, length: 60)
@@ -33,4 +33,4 @@
                     %td= link_to t('show'), admin_task_path(task), class: 'btn btn-primary btn-xs'
             .row
               .col-sm-6
-                = will_paginate @task_status, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2
+                = will_paginate @task_status_tasks, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

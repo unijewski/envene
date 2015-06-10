@@ -6,7 +6,9 @@ class Admin::TaskStatusesController < Admin::AdminController
   end
 
   def show
-    @task_status = TaskStatus.find(params[:id]).tasks.order(:id).paginate(page: params[:page])
+    task_status = TaskStatus.find(params[:id])
+    @task_status_tasks = task_status.tasks.order(:id).paginate(page: params[:page])
+    @task_status_name = task_status.name
   rescue ActiveRecord::RecordNotFound
     redirect_to admin_task_statuses_path, alert: t('task_status_not_found')
   end

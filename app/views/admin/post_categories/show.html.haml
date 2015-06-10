@@ -8,7 +8,7 @@
       .col-md-12
         .panel.panel-default
           .panel-heading
-            = t('post_category_posts', post_category: @post_category.first.category.name)
+            = t('post_category_posts', post_category: @post_category_name)
           .panel-body
             .table-responsive
               %table.table.table-striped
@@ -19,7 +19,7 @@
                     %th= t('published')
                     %th= t('author')
                 %tbody
-                - @post_category.each do |post|
+                - @post_category_posts.each do |post|
                   %tr
                     %td= post.id
                     %td= truncate(post.title, length: 60)
@@ -28,4 +28,4 @@
                     %td= link_to t('show'), admin_post_path(post), class: 'btn btn-primary btn-xs'
             .row
               .col-sm-6
-                = will_paginate @post_category, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2
+                = will_paginate @post_category_posts, renderer: BootstrapPagination::Rails, previous_label: t('previous_page'), next_label: t('next_page'), inner_window: 2

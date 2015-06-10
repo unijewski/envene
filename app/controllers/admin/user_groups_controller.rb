@@ -6,7 +6,9 @@ class Admin::UserGroupsController < Admin::AdminController
   end
 
   def show
-    @user_group = UserGroup.find(params[:id]).users.order(:id).paginate(page: params[:page])
+    user_group = UserGroup.find(params[:id])
+    @user_group_users = user_group.users.order(:id).paginate(page: params[:page])
+    @user_group_name = user_group.name
   rescue ActiveRecord::RecordNotFound
     redirect_to admin_user_groups_path, alert: t('user_group_not_found')
   end
