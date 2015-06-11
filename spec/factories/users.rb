@@ -3,7 +3,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password { Faker::Internet.password(8) }
     admin false
-    username { Faker::Internet.user_name }
+    username { Faker::Internet.user_name(nil, %w(. _ -)) }
     association :group, factory: :user_group
   end
 
@@ -11,7 +11,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password { Faker::Internet.password(8) }
     admin true
-    username { Faker::Internet.user_name }
+    username { Faker::Internet.user_name(nil, %w(. _ -)) }
     association :group, factory: :user_group
   end
 end

@@ -5,6 +5,6 @@ FactoryGirl.define do
     progress 0
     association :status, factory: :task_status
     association :priority, factory: :task_priority_type
-    association :author, factory: :admin
+    association :author, factory: :user
   end
 end
