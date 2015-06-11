@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 UserGroup.create(
   [{ name: 'User' }, { name: 'Administrator' }, { name: 'Moderator' }, { name: 'Bloger' }]
 )
@@ -20,6 +13,8 @@ TaskPriorityType.create(
 PostCategory.create(
   [{ name: 'Movies' }, { name: 'Music' }, { name: 'Travels' }, { name: 'Food' }, { name: 'Clothes' }, { name: 'Books' }]
 )
+
+# Sample data
 
 User.create(
   username: 'Admin',
