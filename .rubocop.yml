@@ -1,0 +1,11 @@
+LineLength:
+  Max: 110
+AllCops:
+  Exclude:
+    - bin/**/*
+    - config/**/*
+    - db/**/*
+Metrics/AbcSize:
+  Max: 25
+Documentation:
+  Enabled: false
