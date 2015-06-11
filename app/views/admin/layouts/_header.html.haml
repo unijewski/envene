@@ -1,12 +1,12 @@
-%nav.navbar.navbar-default.navbar-cls-top{role: 'navigation', style: 'margin-bottom: 0'}
+%nav.navbar.navbar-default.navbar-cls-top{ role: 'navigation', style: 'margin-bottom: 0' }
   .navbar-header
-    %button.navbar-toggle{'data-target' => '.sidebar-collapse', 'data-toggle' => 'collapse', type: 'button'}
+    %button.navbar-toggle{ 'data-target' => '.sidebar-collapse', 'data-toggle' => 'collapse', type: 'button' }
       %span.sr-only Toggle navigation
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
     = link_to 'Envene', admin_dashboard_path, class: 'navbar-brand'
-  %div{style: 'color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;'}
+  %div{ style: 'color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;' }
     #{t('last_access')}:
     = current_user.last_sign_in_at.strftime('%Y/%m/%d %H:%M')
     = link_to t('sign_out'), destroy_user_session_path, method: 'delete', class: 'btn btn-danger square-btn-adjust'

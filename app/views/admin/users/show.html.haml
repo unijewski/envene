@@ -11,10 +11,10 @@
           .panel-body
             .row
               .col-md-9
-                %h3 #{@user.username}
+                %h3= @user.username
                 .table-responsive
-                  #dataTables-example_wrapper.dataTables_wrapper.form-inline{:role => 'grid'}
-                    %table#dataTables-example.table.table-striped.table-bordered.table-hover.dataTable.no-footer{'aria-describedby' => 'dataTables-example_info'}
+                  #dataTables-example_wrapper.dataTables_wrapper.form-inline{ role: 'grid' }
+                    %table#dataTables-example.table.table-striped.table-bordered.table-hover.dataTable.no-footer{ 'aria-describedby' => 'dataTables-example_info' }
                       %tbody
                         %tr
                           %td #{t('email')}:
@@ -44,17 +44,17 @@
                 %h3= t('gravatar')
                 = gravatar_for(@user)
             .row
-              .col-md-12{style: 'margin-top: 15px;'}
-                .btn-group.btn-group-justified{"aria-label" => "...", :role => "group"}
-                  .btn-group{role: 'group'}
+              .col-md-12{ style: 'margin-top: 15px;' }
+                .btn-group.btn-group-justified{ 'aria-label' => '...', role: 'group' }
+                  .btn-group{ role: 'group' }
                     = link_to :back, class: 'btn btn-warning' do
                       %i.fa.fa-arrow-left
                       = t('back')
-                  .btn-group{role: 'group'}
+                  .btn-group{ role: 'group' }
                     = link_to edit_admin_user_path(@user), class: 'btn btn-primary' do
                       %i.fa.fa-edit
                       = t('edit')
-                  .btn-group{role: 'group'}
+                  .btn-group{ role: 'group' }
                     = link_to admin_user_path(@user), method: :delete, data: { confirm: t('user_delete_confirmation') }, class: 'btn btn-danger' do
                       %i.fa.fa-pencil
                       = t('destroy')
@@ -80,7 +80,7 @@
                     %td= truncate(task.name, length: 60)
                     %td
                       .progress.progress-striped
-                        .progress-bar.progress-bar-success{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => "#{task.progress}", :role => 'progressbar', :style => "width: #{task.progress}%"}
+                        .progress-bar.progress-bar-success{ 'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => "#{task.progress}", role: 'progressbar', style: "width: #{task.progress}%" }
                           %span.sr-only #{task.progress}%
                     %td= task.status.name
                     %td= task.priority.name

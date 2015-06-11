@@ -9,7 +9,7 @@
 
   %p= t('note')
 
-  - if !user_signed_in?
+  - unless user_signed_in?
     %p
       #{t('please')},
       = link_to t('sign_in').downcase + '.', new_user_session_path

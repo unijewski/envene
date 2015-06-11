@@ -13,8 +13,8 @@
             .row
               .col-md-12
                 .table-responsive
-                  #dataTables-example_wrapper.dataTables_wrapper.form-inline{:role => 'grid'}
-                    %table#dataTables-example.table.table-striped.table-bordered.table-hover.dataTable.no-footer{'aria-describedby' => 'dataTables-example_info'}
+                  #dataTables-example_wrapper.dataTables_wrapper.form-inline{ role: 'grid' }
+                    %table#dataTables-example.table.table-striped.table-bordered.table-hover.dataTable.no-footer{ 'aria-describedby' => 'dataTables-example_info' }
                       %tbody
                         %tr
                           %td #{t('published')}:
@@ -33,17 +33,17 @@
                     :preserve
                       #{@post.body}
             .row
-              .col-md-12{style: 'margin-top: 15px;'}
-                .btn-group.btn-group-justified{"aria-label" => "...", :role => "group"}
-                  .btn-group{role: 'group'}
+              .col-md-12{ style: 'margin-top: 15px;' }
+                .btn-group.btn-group-justified{ 'aria-label' => '...', role: 'group' }
+                  .btn-group{ role: 'group' }
                     = link_to :back, class: 'btn btn-warning' do
                       %i.fa.fa-arrow-left
                       = t('back')
-                  .btn-group{role: 'group'}
+                  .btn-group{ role: 'group' }
                     = link_to edit_admin_post_path(@post), class: 'btn btn-primary' do
                       %i.fa.fa-edit
                       = t('edit')
-                  .btn-group{role: 'group'}
+                  .btn-group{ role: 'group' }
                     = link_to admin_post_path(@post), method: :delete, data: { confirm: t('delete_confirmation') }, class: 'btn btn-danger' do
                       %i.fa.fa-pencil
                       = t('destroy')
